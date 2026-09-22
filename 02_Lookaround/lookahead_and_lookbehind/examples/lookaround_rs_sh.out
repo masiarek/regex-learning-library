@@ -1,0 +1,7 @@
+regex:       refused
+regex parse error:
+    foo(?=bar)
+       ^^^
+error: look-around, including look-ahead and look-behind, is not supported
+fancy-regex: fixed-width lookbehind -> Some("250")
+fancy-regex: variable-width lookbehind -> Error compiling regex: Look-behind assertion without constant size

@@ -1,0 +1,6 @@
+fixed   : 250
+variable: 250
+starred : 250
+negative: [ '250', '0' ]
+Sunshine1  true
+sunshine1  false

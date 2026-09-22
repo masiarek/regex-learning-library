@@ -1,0 +1,5 @@
+aax   match
+ax    no match
+aaxx  no match
+onetwo: no match
+no such group: Reference to nonexistent group in regex; marked by <-- HERE in m/^(?:\2 <-- HERE b|(a))+$/

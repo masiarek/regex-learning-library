@@ -1,0 +1,10 @@
+site/
+__pycache__/
+.venv/
+.DS_Store
+.idea/
+
+# A compiled example, if someone builds one beside its source.
+*.dSYM/
+*.class
+rust-demo/target/

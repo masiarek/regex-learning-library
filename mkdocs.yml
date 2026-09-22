@@ -1,0 +1,93 @@
+# MkDocs Material site for the whole repo — publishes every Markdown page as a
+# searchable website on GitHub Pages.
+#
+#   Local preview:  uv run --group docs mkdocs serve
+#   Deploy:         .github/workflows/docs.yml builds on every push to master
+#                   (one-time setup: repo Settings → Pages → Source: GitHub Actions,
+#                    and widen the github-pages environment's branch policy to master)
+#
+# The docs root IS the repo root (mkdocs-same-dir), so the same Markdown GitHub
+# renders is what the site serves, and every example source and its recorded
+# .out key is carried through as a static file that a page can link to.
+
+site_name: Regular Expressions — Learning Library
+site_description: One regular-expression question per page, put to Rust, Python and ABAP first and then to Perl, JavaScript, Ruby, Java, Go, grep and sed — every answer backed by a program that runs and is checked against its recorded output in CI.
+site_url: https://masiarek.github.io/regex-learning-library/
+repo_url: https://github.com/masiarek/regex-learning-library
+repo_name: masiarek/regex-learning-library
+edit_uri: edit/master/
+
+docs_dir: .
+site_dir: site
+
+# Cross-links are authored for GitHub's file-relative rendering (including links
+# to a folder's README.md). Plain .html pages keep those exact semantics; pretty
+# directory URLs would shift every page one level deeper and break them.
+use_directory_urls: false
+
+exclude_docs: |
+  /README.md
+  /CLAUDE.md
+  __pycache__/
+  rust-demo/target/
+
+not_in_nav: |
+  /CONTRIBUTING.md
+
+theme:
+  name: material
+  icon:
+    logo: material/regex
+  features:
+    - navigation.indexes    # a folder's README.md becomes its section landing page
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+hooks:
+  - mkdocs_hooks.py
+
+plugins:
+  - search
+  - same-dir
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  # Lets index.md inline README.md, so the repo front page and the site homepage
+  # share one source and cannot drift.
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/masiarek/regex-learning-library

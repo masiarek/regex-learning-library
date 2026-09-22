@@ -1,0 +1,18 @@
+does it COMPILE?           python  perl   node   ruby   java  
+backreference              yes     yes    yes    yes    yes   
+named backref, \k<w>       no      yes    yes    yes    yes   
+named backref, (?P=w)      yes     yes    no     no     no    
+forward reference          no      yes    yes    yes    yes   
+lookahead                  yes     yes    yes    yes    yes   
+lookbehind, fixed width    yes     yes    yes    yes    yes   
+lookbehind, two widths     no      yes    yes    yes    yes   
+lookbehind, variable width no      yes    yes    no     yes   
+atomic group               yes     yes    no     yes    yes   
+possessive quantifier      yes     yes    no     yes    yes   
+recursion                  no      yes    no     no     no    
+
+and does it MATCH 'aax' with the forward reference ^(?:\1x|(a))+$ ?
+python  compile error
+perl    yes
+node    yes
+ruby    yes

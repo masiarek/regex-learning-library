@@ -1,0 +1,60 @@
+# Every example must run and print exactly what its recorded .out file says — and
+# every lesson page's generated block must match that run.
+#
+#   examples/*.py    the runner image's python3, standard library only
+#   examples/*.pl    perl 5.36+ (Ubuntu's own is 5.38)
+#   examples/*.js    node, as the runner image ships it
+#   examples/*.rb    ruby 3.2+, from ruby/setup-ruby
+#   examples/*.go    Go 1.25, from actions/setup-go
+#   examples/*.java  Java 25 (Temurin), from actions/setup-java
+#   examples/*.rs    — none: Rust needs a crate for regular expressions, so the
+#                     Rust answers run through rust-demo/ from a .sh example
+#   examples/*.sh    bash: cargo, grep, sed
+#   examples/*.abap  never run here. Nothing on a GitHub runner has an ABAP
+#                    system; an .abap file is source the page pastes, and it has
+#                    no answer key. See CONTRIBUTING.md → "The ABAP column".
+
+name: examples
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+      - name: Show toolchain
+        run: |
+          python3 --version
+          perl -v | sed -n 2p
+          node --version
+          ruby --version
+          go version
+          java --version | head -1
+          cargo --version
+          sed --version | head -1
+          uname -sm
+      - name: Run every example and check it against its answer key
+        run: python3 tools/run_examples.py --check
+      - name: Check that every external link is marked as external
+        run: python3 tools/check_link_style.py
+      # The ABAP examples are never run, so this is the only check they get:
+      # abaplint parses them and syntax-checks them against the release in
+      # abaplint.json. It is also what flags an obsolete REGEX addition.
+      - name: Parse and syntax-check the ABAP examples
+        run: npx --yes @abaplint/cli

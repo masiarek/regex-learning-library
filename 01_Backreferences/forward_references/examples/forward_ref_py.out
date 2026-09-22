@@ -1,0 +1,3 @@
+python compile: invalid group reference 1 at position 5
+python compile: invalid group reference 2 at position 2
+backwards is fine: True

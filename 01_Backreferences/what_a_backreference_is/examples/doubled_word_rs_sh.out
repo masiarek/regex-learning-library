@@ -1,0 +1,7 @@
+regex:       refused
+regex parse error:
+    \b(\w+) \1\b
+            ^^
+error: backreferences are not supported
+fancy-regex: found "the the" at byte 0
+fancy-regex: found "is is" at byte 21

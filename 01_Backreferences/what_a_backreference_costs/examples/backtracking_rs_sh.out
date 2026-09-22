@@ -1,0 +1,3 @@
+regex:       ^(a+)+$          -> false (one pass, always)
+fancy-regex: ^(a+)+$          -> Ok(false) (delegated to regex)
+fancy-regex: ^(a+)+\1$        -> Error executing regex: Max limit for backtracking count exceeded

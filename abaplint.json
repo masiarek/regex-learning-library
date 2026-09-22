@@ -1,0 +1,25 @@
+{
+  "global": {
+    "files": "/**/examples/*.abap",
+    "exclude": [
+      "site/.*",
+      ".*/site/.*"
+    ]
+  },
+  "syntax": {
+    "version": {
+      "release": "v758",
+      "language": "Normal"
+    },
+    "errorNamespace": "^(Z|Y|LCL_|LIF_|TY_)"
+  },
+  "rules": {
+    "parser_error": true,
+    "check_syntax": true,
+    "7bit_ascii": true,
+    "obsolete_statement": true,
+    "space_before_colon": true,
+    "sequential_blank": true,
+    "contains_tab": true
+  }
+}

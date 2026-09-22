@@ -1,0 +1,24 @@
+# The one place in this library where an example needs a crate.
+#
+# Rust has no regular expressions in its standard library, so a Rust answer to
+# "does this engine have backreferences?" is really an answer about a crate.
+# Two crates, on purpose, because they disagree:
+#
+#   regex        the one everybody uses. A finite automaton: no backreferences,
+#                no lookaround, and a guarantee of linear time in the subject.
+#   fancy-regex  a backtracking layer over `regex` that adds both, and gives up
+#                the guarantee -- it has a backtrack limit instead.
+#
+# A lesson runs a bin from here through a .sh example, so the recorded answer
+# key is a real cargo run. Versions are pinned by Cargo.lock and CI passes
+# --locked, because these are ERROR MESSAGES on a page: a silent minor bump that
+# rewords one is exactly the drift this library exists to catch.
+[package]
+name = "regex-demo"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+regex = "1.13"
+fancy-regex = "0.16"

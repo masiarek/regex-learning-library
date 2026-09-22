@@ -1,0 +1,6 @@
+BRE  (grep):
+the the cat
+fox fox
+ERE  (grep -E):
+the the cat
+fox fox

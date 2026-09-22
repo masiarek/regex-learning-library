@@ -1,0 +1,8 @@
+['250']
+['25', '90']
+Sunshine1  True
+sunshine1  False
+Sun1       False
+['250']
+variable width: look-behind requires fixed-width pattern
+uneven branches: look-behind requires fixed-width pattern

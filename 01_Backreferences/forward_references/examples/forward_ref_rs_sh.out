@@ -1,0 +1,8 @@
+regex:       refused
+regex parse error:
+    ^(?:\1x|(a))+$
+        ^^
+error: backreferences are not supported
+fancy-regex: aax   true
+fancy-regex: ax    false
+fancy-regex: aaxx  false

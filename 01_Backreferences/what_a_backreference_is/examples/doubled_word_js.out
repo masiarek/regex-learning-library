@@ -1,0 +1,5 @@
+numbered   offset  0  'the the'  group 1 = 'the'
+numbered   offset 20  'fox fox'  group 1 = 'fox'
+numbered   offset 49  'dog dog'  group 1 = 'dog'
+named      true
+unset group: empty match

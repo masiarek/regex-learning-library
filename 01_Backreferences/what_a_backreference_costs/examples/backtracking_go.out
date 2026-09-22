@@ -1,0 +1,3 @@
+match = false over 5001 characters
+finished in under 100ms: true
+with a backreference: error parsing regexp: invalid escape sequence: `\1`
