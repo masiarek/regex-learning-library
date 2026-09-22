@@ -20,6 +20,24 @@ There is one exception, and it is marked: **ABAP**. Nothing here — and nothing
 | A table of which engine has which construct | [Who supports what](../03_Engines/who_supports_what/README.md) |
 | Books and the official documentation | [Resources](../04_Resources/README.md) |
 
+## Where to go when something is already wrong
+
+Most of this library exists because a pattern that looks right is not, and the failure is a match result rather than an error message. If one of these is your afternoon, start here instead of at the beginning:
+
+| The symptom | The page |
+| --- | --- |
+| A request hangs; a pattern is fast on test data and not in production | [Catastrophic backtracking](../05_Backtracking/catastrophic_backtracking/README.md) |
+| Somebody made a pattern faster and it stopped matching | [Atomic groups and possessive quantifiers](../05_Backtracking/atomic_groups_and_possessive_quantifiers/README.md) |
+| A validator rejects somebody's name, or accepts a "number" the language cannot parse | [What `\w` and `\b` match](../06_Unicode/what_w_and_b_match/README.md) |
+| `\p{L}` does nothing, or works in one language and not the next | [Naming a Unicode property](../06_Unicode/unicode_properties/README.md) |
+| `(?i)` matched something you did not expect it to | [`(?i)` is a folding table](../06_Unicode/case_insensitive_matching/README.md) |
+| `^…$` let something through that it should not have | [`$` is not the end of the string](../07_Anchors/dollar_and_the_end_of_the_string/README.md) |
+| The same flag letter means something else in the other language | [Flags, and where you can turn one on](../07_Anchors/flags_and_inline_modifiers/README.md) |
+| The pattern matches in both engines and hands back different text | [Leftmost-first and leftmost-longest](../08_Match_Semantics/leftmost_first_vs_leftmost_longest/README.md) |
+| Someone told you `.*?` is the fast one | [Greedy and lazy](../08_Match_Semantics/greedy_and_lazy/README.md) |
+| You are about to match something nested | [Matching nested structures](../09_Recursion/matching_nested_structures/README.md) |
+| One pattern has to handle an optional delimiter properly | [Conditionals and `(?(DEFINE)…)`](../09_Recursion/conditionals_and_define/README.md) |
+
 ## The four lineages
 
 Nearly every engine you will meet is one of four, and knowing which one you are holding predicts more than any single fact:

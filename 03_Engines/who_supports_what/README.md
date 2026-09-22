@@ -41,9 +41,11 @@ ruby    yes
 
 **Lookbehind is three separate questions**, not one. Python refuses even two fixed-width branches. Ruby accepts branches of different lengths but refuses a bounded repeat. Java and JavaScript accept everything asked here.
 
-**Atomic groups and possessive quantifiers are missing only from JavaScript.** Python gained both in 3.11. If you have been writing `(?>…)` off in Python for years, it works now.
+**Atomic groups and possessive quantifiers are missing only from JavaScript.** Python gained both in 3.11. If you have been writing `(?>…)` off in Python for years, it works now — and [what they do to a match](../../05_Backtracking/atomic_groups_and_possessive_quantifiers/README.md) is a larger change than the speed they are reached for.
 
-**Recursion is Perl's alone** among these five. `(?R)`, `(?1)` and friends let a pattern match balanced parentheses — properly, not to a fixed depth. PCRE2 has them too, which means ABAP has them; Python's `re` does not, though the third-party `regex` module does.
+**The `recursion` row says `(?R)`, and that is not the same question as "has recursion".** Ruby has recursion and answers `no` here because Onigmo spells it `\g<0>`; the two dialects have no overlap, so each engine rejects the other's spelling entirely. PCRE2 has `(?R)`, which means ABAP does; Python's `re` does not, though the third-party `regex` module does. [Matching nested structures](../../09_Recursion/matching_nested_structures/README.md) puts every spelling to every engine.
+
+**And this is where "yes means it compiled" earns its warning label.** Two cells not in this table are *silent* false positives: JavaScript accepts `\g<0>` as an identity escape meaning the literal text `g<0>`, and Rust's `regex` accepts `(?R)` because `R` is its CRLF-mode flag, so the group sets a flag and consumes nothing. Both produce a working pattern that matches something and is not recursion, with no warning from either engine. A probe that only asks "did it compile" cannot tell the difference — which is the argument for the behaviour columns on the lesson pages.
 
 ## The engines that refuse the category
 

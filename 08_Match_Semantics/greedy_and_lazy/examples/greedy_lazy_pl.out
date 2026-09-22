@@ -1,0 +1,9 @@
+subject       <b>bold</b>
+  <.+>      first '<b>bold</b>'  all ['<b>bold</b>']
+  <.+?>     first '<b>'  all ['<b>' '</b>']
+  <[^>]+>   first '<b>'  all ['<b>' '</b>']
+subject       aaa
+  a+        first 'aaa'
+  a+?       first 'a'
+  a*?       first ''
+  a{1,3}?   first 'a'

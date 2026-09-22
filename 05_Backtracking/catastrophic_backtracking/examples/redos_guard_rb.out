@@ -1,0 +1,14 @@
+Regexp.timeout is 2.0 seconds; hitting it is reported as the exception class.
+
+patterns with no backreference, ruby:
+  ^(a+)+$                  120 a's then '!'       no match
+  ^(a|a)*$                 120 a's then '!'       no match
+  ^(\s*|\t)+$              120 spaces then '!'    no match
+  ^(\w+\s?)*$              120 a's then '!'       no match
+  ^([a-z]{2,4})+$          120 a's then '!'       Regexp::TimeoutError
+  the email regex          a@a. 120 a's then '!'  Regexp::TimeoutError
+
+the same engine, with the pattern changed instead:
+  ^(?>a+)+$                120 a's then '!'       no match
+  ^([a-z]{2,4})++$         120 a's then '!'       no match
+  the email regex, fixed   a@a. 120 a's then '!'  no match

@@ -1,0 +1,41 @@
+no flags:
+                                        \w   \d   \s
+U+0041 LATIN CAPITAL LETTER A           yes  no   no
+U+00E9 LATIN SMALL LETTER E WITH ACUTE  no   no   no
+U+0301 COMBINING ACUTE ACCENT           no   no   no
+U+0660 ARABIC-INDIC DIGIT ZERO          no   no   no
+U+FF11 FULLWIDTH DIGIT ONE              no   no   no
+U+00A0 NO-BREAK SPACE                   no   no   yes
+U+3000 IDEOGRAPHIC SPACE                no   no   yes
+
+the u flag -- identical, because u is about code points, not classes:
+                                        \w   \d   \s
+U+0041 LATIN CAPITAL LETTER A           yes  no   no
+U+00E9 LATIN SMALL LETTER E WITH ACUTE  no   no   no
+U+0301 COMBINING ACUTE ACCENT           no   no   no
+U+0660 ARABIC-INDIC DIGIT ZERO          no   no   no
+U+FF11 FULLWIDTH DIGIT ONE              no   no   no
+U+00A0 NO-BREAK SPACE                   no   no   yes
+U+3000 IDEOGRAPHIC SPACE                no   no   yes
+
+what you have to write instead (u flag required):
+  U+0041 LATIN CAPITAL LETTER A           \p{L} yes  \p{Nd} no   \p{White_Space} no
+  U+00E9 LATIN SMALL LETTER E WITH ACUTE  \p{L} yes  \p{Nd} no   \p{White_Space} no
+  U+0301 COMBINING ACUTE ACCENT           \p{L} no   \p{Nd} no   \p{White_Space} no
+  U+0660 ARABIC-INDIC DIGIT ZERO          \p{L} no   \p{Nd} yes  \p{White_Space} no
+  U+FF11 FULLWIDTH DIGIT ONE              \p{L} no   \p{Nd} yes  \p{White_Space} no
+  U+00A0 NO-BREAK SPACE                   \p{L} no   \p{Nd} no   \p{White_Space} yes
+  U+3000 IDEOGRAPHIC SPACE                \p{L} no   \p{Nd} no   \p{White_Space} yes
+
+\b\w+\b over 'na' U+00EF 've reader' -- how many words?
+  \b\w+\b              -> 3   na ve reader
+  \b\w+\b with u       -> 3   na ve reader
+  [\p{L}\p{N}_]+       -> 2   na\u00EFve reader
+  \b[\p{L}\p{N}_]+\b   -> 2   na\u00EFve reader
+
+\d and the number that follows it (subject is U+0660 U+0661 U+0662):
+  /^\d+$/       -> no
+  /^\d+$/u      -> no
+  /^\p{Nd}+$/u  -> yes
+  Number()      -> NaN
+  parseInt()    -> NaN

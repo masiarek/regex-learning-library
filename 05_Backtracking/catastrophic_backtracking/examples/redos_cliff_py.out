@@ -1,0 +1,18 @@
+"no answer" means the child was still searching after 3 seconds and was killed.
+
+patterns with no backreference, python re:
+  ^(a+)+$                  16 a's then '!'        no match
+  ^(a+)+$                  120 a's                match
+  ^(a+)+$                  120 a's then '!'       no answer
+  ^(a|a)*$                 120 a's then '!'       no answer
+  ^(\s*|\t)+$              120 spaces then '!'    no answer
+  ^(\w+\s?)*$              120 a's then '!'       no answer
+  ^([a-z]{2,4})+$          120 a's then '!'       no answer
+  the email regex          a@a. 20 a's then '!'   no match
+  the email regex          a@a. 120 a's then '!'  no answer
+
+the same engine, with the pattern changed instead:
+  ^(?>a+)+$                120 a's then '!'       no match
+  ^(a++)+$                 120 a's then '!'       no match
+  ^a+$                     120 a's then '!'       no match
+  the email regex, fixed   a@a. 120 a's then '!'  no match

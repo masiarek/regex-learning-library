@@ -1,0 +1,12 @@
+regex:       (?>a+)b        refused --
+regex parse error:
+    (?>a+)b
+      ^
+error: unrecognized flag
+regex:       a++a           on aa   -> true
+regex:       a++b           on aab  -> true
+fancy-regex: (?>a+)b        on aab  -> Ok(true)
+fancy-regex: (?>a+)a        on aa   -> Ok(false)
+fancy-regex: a++b           on aab  -> Ok(true)
+fancy-regex: a++a           on aa   -> Ok(false)
+fancy-regex: ^[\w.]++\.com$ on example.com -> Ok(false)

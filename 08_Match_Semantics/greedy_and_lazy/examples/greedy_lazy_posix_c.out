@@ -1,0 +1,13 @@
+POSIX ERE, subject "<b>bold</b>"
+  <.+>      -> "<b>bold</b>"
+  <[^>]+>   -> "<b>"
+  <(.+)?>   -> "<b>bold</b>"
+POSIX ERE, subject "aaa"
+  a+        -> "aaa"
+  (a+)?     -> "aaa"
+  a?        -> "a"
+the lazy spellings, which POSIX ERE does not define
+  <.+?>     a lazy engine gives "<b>"   POSIX ERE: not the lazy answer
+  a+?       a lazy engine gives "a"     POSIX ERE: not the lazy answer
+  a*?       a lazy engine gives ""      POSIX ERE: not the lazy answer
+  a{1,3}?   a lazy engine gives "a"     POSIX ERE: not the lazy answer

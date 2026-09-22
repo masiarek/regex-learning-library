@@ -1,0 +1,7 @@
+pattern                subject   match     offsets
+a|ab                   ab        ab        [0,2)
+ab|a                   ab        ab        [0,2)
+[0-9]+|[0-9]+\.[0-9]+  v 3.14 w  3.14      [2,6)
+[0-9]+\.[0-9]+|[0-9]+  v 3.14 w  3.14      [2,6)
+
+(a*)(a*)               aaa       whole=aaa g1=aaa g2=

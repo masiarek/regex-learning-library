@@ -1,0 +1,34 @@
+does it COMPILE?
+  (?R)     no
+  (?1)     no
+  (?&par)  no
+  \g<0>    yes
+  \g<1>    yes
+  \g<par>  yes
+
+\g<0>, unanchored
+  (a(b)c)    found '(a(b)c)'
+  ((a)(b))   found '((a)(b))'
+  ()         found '()'
+  (a(b)c     found '(b)'
+  a          no match
+
+\A...\g<0>...\z -- the anchors are INSIDE the recursion
+  (a(b)c)    no match
+  ((a)(b))   no match
+  ()         match
+  (a(b)c     no match
+  a          no match
+
+\g<1> and \g<par>, anchored
+  (a(b)c)    by number match     by name match
+  ((a)(b))   by number match     by name match
+  ()         by number match     by name match
+  (a(b)c     by number no match  by name no match
+  a          by number no match  by name no match
+
+nesting depth, with the \g<1> form
+  depth 1     match
+  depth 10    match
+  depth 100   match
+  depth 1000  match

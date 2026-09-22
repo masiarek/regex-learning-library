@@ -1,0 +1,16 @@
+(?R)
+  regex:       COMPILED
+  fancy-regex: refused -- Parsing error at position 14: Unknown group flag: (?R
+(?1)
+  regex:       refused -- regex parse error: ^(\((?:[^()]|(?1))*\))$ ^ error: unrecognized flag
+  fancy-regex: refused -- Parsing error at position 15: Unknown group flag: (?1
+\g<0>
+  regex:       refused -- regex parse error: ^\((?:[^()]|\g<0>)*\)$ ^^ error: unrecognized escape sequence
+  fancy-regex: refused -- Error compiling regex: Regex uses currently unimplemented feature: Subroutine Call
+
+what regex's (?R) pattern actually matches
+  (a(b)c)    false
+  ((a)(b))   false
+  (ab)       true
+  ()         true
+  a          false

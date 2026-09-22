@@ -1,0 +1,37 @@
+(?R), unanchored
+  (a(b)c)    found '(a(b)c)'
+  ((a)(b))   found '((a)(b))'
+  ()         found '()'
+  (a(b)c     found '(b)'
+  a          no match
+
+^...(?R)...$ -- the anchors are INSIDE the recursion
+  (a(b)c)    no match
+  ((a)(b))   no match
+  ()         match
+  (a(b)c     no match
+  a          no match
+
+^((?1) form)$ -- whole subject must be one balanced group
+  (a(b)c)    match
+  ((a)(b))   match
+  ()         match
+  (a(b)c     no match
+  a          no match
+
+^((?&par) form)$ -- the same thing, named
+  (a(b)c)    match
+  ((a)(b))   match
+  ()         match
+  (a(b)c     no match
+  a          no match
+
+subroutine call vs backreference
+  12-34    (?1) yes  \1 no
+  12-12    (?1) yes  \1 yes
+
+nesting depth, with the (?1) form
+  depth 1     match
+  depth 10    match
+  depth 100   match
+  depth 1000  match

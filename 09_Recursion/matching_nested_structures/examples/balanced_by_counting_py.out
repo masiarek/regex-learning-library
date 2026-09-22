@@ -1,0 +1,21 @@
+what Python's re does with a recursive pattern
+  (?R)     refused at compile time
+  (?1)     refused at compile time
+  (?&p)    refused at compile time
+  \g<0>    refused at compile time
+
+counting instead
+  (a(b)c)    balanced, offsets 0..6
+  ((a)(b))   balanced, offsets 0..7
+  ()         balanced, offsets 0..1
+  (a(b)c     1 unclosed '(', outermost at offset 0
+  a)b        unexpected ')' at offset 1
+  a          no parentheses
+
+no engine limit applies: depth is just an integer
+  depth 10      balanced, offsets 0..20
+  depth 1000    balanced, offsets 0..2000
+  depth 100000  balanced, offsets 0..200000
+
+and hostile input is answered in one pass, not searched
+  ((((((((((((...  40 unclosed '(', outermost at offset 0

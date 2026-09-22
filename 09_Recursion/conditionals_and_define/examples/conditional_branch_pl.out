@@ -1,0 +1,24 @@
+                               <tag>  tag    <tag
+numbered   (?(1)>)             yes    yes    no
+named      (?(<open>)>)        yes    yes    no
+named      (?(open)>)          compile error
+lookaround (?(?=<)...|...)     yes    yes    no
+
+(a)(?(2)x|y) with no group 2: compiled
+(a)(?(2)x|y)       on ay  yes
+(a)(?(2)x|y)       on ax  no
+
+(a)(?(R)x|y)       on ay  yes
+(a)(?(R)x|y)       on ax  no
+(?<R>x)(?(R)y|n)   on xy  no
+(?<R>x)(?(R)y|n)   on xn  yes
+(?<R>x)(?(<R>)y|n) on xy  yes
+(?<R>x)(?(<R>)y|n) on xn  no
+
+ipv4 192.168.0.1      yes
+ipv4 255.255.255.255  yes
+ipv4 256.1.1.1        no
+ipv4 1.2.3            no
+ipv4 01.2.3.4         no
+the DEFINE block alone, on the empty string: yes
+the DEFINE block alone, on '7':              no

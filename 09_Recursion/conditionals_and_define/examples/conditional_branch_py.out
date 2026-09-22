@@ -1,0 +1,11 @@
+                               <tag>  tag    <tag
+numbered   (?(1)>)             yes    yes    no
+named      (?(open)>)          yes    yes    no
+PCRE named (?(<open>)>)        compile error
+lookaround (?(?=<)<\w+>|\w+)   compile error
+DEFINE     (?(DEFINE)...)      compile error
+no such group (a)(?(2)x|y)     compile error
+
+then someone adds an optional numeric prefix in front of it:
+numbered   (?(1)>)             no     yes    yes
+named      (?(open)>)          yes    yes    no

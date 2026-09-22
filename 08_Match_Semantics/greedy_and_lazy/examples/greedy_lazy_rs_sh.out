@@ -1,0 +1,9 @@
+subject: <b>bold</b>
+  <.+>      regex "<b>bold</b>" fancy-regex "<b>bold</b>"
+  <.+?>     regex "<b>"        fancy-regex "<b>"
+  <[^>]+>   regex "<b>"        fancy-regex "<b>"
+subject: aaa
+  a+        regex "aaa"        fancy-regex "aaa"
+  a+?       regex "a"          fancy-regex "a"
+  a*?       regex ""           fancy-regex ""
+  a{1,3}?   regex "a"          fancy-regex "a"

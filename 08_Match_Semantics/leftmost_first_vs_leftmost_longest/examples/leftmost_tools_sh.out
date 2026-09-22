@@ -1,0 +1,7 @@
+tool and pattern                        subject    result
+grep -E -o 'a|ab'                       ab         ab
+grep -E -o '[0-9]+|[0-9]+\.[0-9]+'      v 3.14 w   3.14
+sed -E 's/a|ab/[&]/'                    ab         [ab]
+sed -E 's/[0-9]+|[0-9]+\.[0-9]+/[&]/'   v 3.14 w   v [3.14] w
+awk match($0, /a|ab/)                   ab         ab at 1 len 2
+awk match($0, /[0-9]+|[0-9]+\.[0-9]+/)  v 3.14 w   3.14 at 3 len 4

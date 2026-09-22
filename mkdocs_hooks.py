@@ -52,16 +52,37 @@ FIXUPS = {
 # Lesson folders whose sidebar label is deliberately not their H1. Keyed by
 # on-disk folder name. An entry naming a folder that no longer exists is a
 # silent no-op, which tools/check_nav_chain.py reports.
-LABEL_OVERRIDES: dict[str, str] = {}
+LABEL_OVERRIDES: dict[str, str] = {
+    # A lesson's H1 is written to be read on the page, where a clause after the
+    # colon or dash earns its keep. In a 12rem sidebar the same sentence wraps
+    # to three lines and pushes its neighbours out of view, so these six take a
+    # shorter name. The H1 itself is left alone -- it is the page's title, not
+    # its nav entry.
+    "atomic_groups_and_possessive_quantifiers": "Atomic groups and possessives",
+    "case_insensitive_matching": "Case-insensitive matching",
+    "conditionals_and_define": "Conditionals and (?(DEFINE)…)",
+    "greedy_and_lazy": "Greedy and lazy",
+    "leftmost_first_vs_leftmost_longest": "Leftmost-first vs leftmost-longest",
+    "unicode_properties": "Unicode properties: \\p{…}",
+}
 
 # Reading order per folder path. Children named by on-disk name; anything not
 # listed sorts alphabetically after the listed ones.
 NAV_ORDER: dict[str, list[str]] = {
+    # Resources stays last although its folder is numbered 04: the advanced
+    # chapters were added after it and keep the numbers they were born with,
+    # because a filename is a permanent URL. Ordering is presentation, so it
+    # belongs here rather than in a rename -- which is this file's whole point.
     "": [
         "index.md",
         "00_Start_Here",
         "01_Backreferences",
         "02_Lookaround",
+        "05_Backtracking",
+        "06_Unicode",
+        "07_Anchors",
+        "08_Match_Semantics",
+        "09_Recursion",
         "03_Engines",
         "04_Resources",
     ],
@@ -83,6 +104,36 @@ NAV_ORDER: dict[str, list[str]] = {
         "README.md",
         "who_supports_what",
         "when_there_is_no_lookaround",
+    ],
+    # The search first, then the construct that stops it.
+    "05_Backtracking": [
+        "README.md",
+        "catastrophic_backtracking",
+        "atomic_groups_and_possessive_quantifiers",
+    ],
+    # The shorthands everybody already uses, then the properties that replace
+    # them, then the flag that turns out to be a table lookup.
+    "06_Unicode": [
+        "README.md",
+        "what_w_and_b_match",
+        "unicode_properties",
+        "case_insensitive_matching",
+    ],
+    "07_Anchors": [
+        "README.md",
+        "dollar_and_the_end_of_the_string",
+        "flags_and_inline_modifiers",
+    ],
+    # Which alternative wins, then how much one repetition takes.
+    "08_Match_Semantics": [
+        "README.md",
+        "leftmost_first_vs_leftmost_longest",
+        "greedy_and_lazy",
+    ],
+    "09_Recursion": [
+        "README.md",
+        "matching_nested_structures",
+        "conditionals_and_define",
     ],
 }
 

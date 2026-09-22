@@ -1,0 +1,22 @@
+== the dot: what it excludes ==
+subject "one\ntwo"
+  /one.two/                      no match
+  /one.two/s                     match "one\ntwo"
+subject "one\rtwo"
+  /one.two/                      no match
+  /one.two/s                     match "one\rtwo"
+== the letter m: line anchors ==
+subject "one\ntwo\nthree"
+  /^two$/                        no match
+  /^two$/m                       match "two"
+  /one.two/m                     no match
+subject "abc\r\ndef"
+  /^abc$/m                       match "abc"
+  /^\w+$/m                       match "abc"
+== the letter i, the one uncontested flag ==
+  /abc/   on ABC                 no match
+  /abc/i  on ABC                 match "ABC"
+== no free-spacing mode ==
+  one line                       match "2026-09-22"
+  /a b/  on "a b"                match "a b"
+  /a#b/  on "a#b"                match "a#b"

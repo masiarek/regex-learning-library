@@ -1,0 +1,10 @@
+pattern                subject       python  perl   node   ruby   java
+a+a                    aa            yes     yes    yes    yes    yes
+a++a                   aa            no      no     -      no     no
+(?>a+)a                aa            no      no     -      no     no
+a++b                   aab           yes     yes    -      yes    yes
+(?>a+)b                aab           yes     yes    -      yes    yes
+^[\w.]+\.com$          example.com   yes     yes    yes    yes    yes
+^[\w.]++\.com$         example.com   no      no     -      no     no
+(?=(a+))\1a            aa            no      no     no     no     no
+(?=(a+))\1b            aab           yes     yes    yes    yes    yes

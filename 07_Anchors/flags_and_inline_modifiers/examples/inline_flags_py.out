@@ -1,0 +1,35 @@
+== the dot: what it excludes ==
+subject "one\ntwo"
+  one.two                        no match
+  one.two  re.DOTALL             match "one\ntwo"
+  (?s)one.two                    match "one\ntwo"
+subject "one\rtwo"
+  one.two                        match "one\rtwo"
+== the letter m: line anchors ==
+subject "one\ntwo\nthree"
+  ^two$                          no match
+  ^two$  re.MULTILINE            match "two"
+  (?m)^two$                      match "two"
+  one.two  re.MULTILINE          no match
+subject "abc\r\ndef"
+  ^abc$  re.MULTILINE            no match
+  ^abc\r?$  re.MULTILINE         match "abc\r"
+== free-spacing: re.VERBOSE ==
+  one line                       match "2026-09-22"
+  re.VERBOSE                     match "2026-09-22"
+  a b   on "a b"                 no match
+  a b   on "ab"                  match "ab"
+  a\ b  on "a b"                 match "a b"
+  [ ]   on "a b"                 match "a b"
+  a#b   on "a#b"                 match "a"
+== inline and scoped modifiers ==
+  abc          on ABC            no match
+  abc   re.I   on ABC            match "ABC"
+  (?i)abc      on ABC            match "ABC"
+  (?i:b)c      on Bc             match "Bc"
+  (?i:b)c      on bC             no match
+  (?i)ab(?-i:cd) on ABcd         match "ABcd"
+  (?i)ab(?-i:cd) on ABCD         no match
+  a(?i)bc      on aBC            compile error
+  (a(?i)b)c    on aBc            compile error
+  (a(?i)b)c    on abC            compile error

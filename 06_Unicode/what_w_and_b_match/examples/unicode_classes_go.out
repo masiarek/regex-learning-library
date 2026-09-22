@@ -1,0 +1,33 @@
+the shorthands, and there is no flag that changes them:
+                                        \w  \d  \s
+U+0041 LATIN CAPITAL LETTER A           yes no  no
+U+00E9 LATIN SMALL LETTER E WITH ACUTE  no  no  no
+U+0301 COMBINING ACUTE ACCENT           no  no  no
+U+0660 ARABIC-INDIC DIGIT ZERO          no  no  no
+U+FF11 FULLWIDTH DIGIT ONE              no  no  no
+U+00A0 NO-BREAK SPACE                   no  no  no
+U+3000 IDEOGRAPHIC SPACE                no  no  no
+
+the Unicode categories, which is all RE2 offers:
+                                        \pL     \p{Nd}  \p{Zs}
+U+0041 LATIN CAPITAL LETTER A           yes     no      no
+U+00E9 LATIN SMALL LETTER E WITH ACUTE  yes     no      no
+U+0301 COMBINING ACUTE ACCENT           no      no      no
+U+0660 ARABIC-INDIC DIGIT ZERO          no      yes     no
+U+FF11 FULLWIDTH DIGIT ONE              no      yes     no
+U+00A0 NO-BREAK SPACE                   no      no      yes
+U+3000 IDEOGRAPHIC SPACE                no      no      yes
+
+RE2 has no binary Unicode properties -- ERR means "failed to compile":
+  \p{White_Space}   ERR
+  \p{Alphabetic}    ERR
+  \p{Word}          ERR
+
+\b\w+\b over 'na' U+00EF 've reader' -- how many words?
+  \b\w+\b          -> 3   na ve reader
+  \b[\pL\pN_]+\b   -> 2   na\u00EFve reader
+
+\d and the number that follows it (subject is U+0660 U+0661 U+0662):
+  \d+          -> no
+  \p{Nd}+      -> yes
+  strconv.Atoi -> error

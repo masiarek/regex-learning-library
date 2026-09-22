@@ -1,0 +1,12 @@
+go regexp
+pattern                       "1"     "1\n"   "1\nrm -rf /"
+^\d+$                         match   no      no
+\A\d+\z                       match   no      no
+\A\d+\Z                       error   error   error
+(?m)^\d+$                     match   match   match
+
+\A\d+\Z                       refused at compile time
+
+flag                          none    (?m)    (?s)
+^\d+$ on "1\nrm -rf /"        no      match   no
+a.b on "a\nb"                 no      no      match

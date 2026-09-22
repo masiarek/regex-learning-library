@@ -1,0 +1,25 @@
+does (?i) match?          ruby, Onigmo, anchored
+pattern   subject                                        utf-8 binary
+k         U+004B LATIN CAPITAL LETTER K                  yes   yes
+k         U+212A KELVIN SIGN                             yes   no
+s         U+017F LATIN SMALL LETTER LONG S               yes   no
+U+00DF    U+1E9E LATIN CAPITAL LETTER SHARP S            yes   no
+U+1E9E    U+00DF LATIN SMALL LETTER SHARP S              yes   no
+ss        U+00DF LATIN SMALL LETTER SHARP S              yes   no
+[k]       U+212A KELVIN SIGN                             yes   no
+[a-z]     U+212A KELVIN SIGN                             yes   no
+i         U+0131 LATIN SMALL LETTER DOTLESS I            no    no
+i         U+0130 LATIN CAPITAL LETTER I WITH DOT ABOVE   no    no
+i U+0307  U+0130 LATIN CAPITAL LETTER I WITH DOT ABOVE   yes   no
+
+does (?i) fold the BACKREFERENCE comparison too?
+(?i)(a)\1    vs 'a' + U+0041            yes
+(?i)(k)\1    vs 'k' + U+212A            yes
+
+one program, two answers about the same pair
+  casecmp?: U+00DF and 'ss'             true     regex //i: yes
+  downcase(:fold) U+00DF == 'ss'        true     regex //i: yes
+  casecmp?: U+212A and 'k'              true     regex //i: yes
+  casecmp?: U+017F and 's'              true     regex //i: yes
+  downcase U+1E9E == U+00DF             true     regex //i: yes
+  upcase U+00DF is 2 code points        true     regex //i: yes

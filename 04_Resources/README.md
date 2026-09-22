@@ -22,6 +22,13 @@ Two more that are worth a bookmark each:
 - [regex101 ↗](https://regex101.com/) — tests a pattern against subject text with a step-by-step explanation, and lets you pick the flavour (PCRE2, Python, Go, Java, JavaScript, Rust). Picking the right flavour is the whole value; a pattern debugged in the wrong one is debugged against the wrong engine.
 - [Regular-Expressions.info ↗](https://www.regular-expressions.info/) — the most complete cross-engine reference on the web. Verify surprising claims against a run; a few of its cross-engine statements did not survive contact with the engines while this chapter was written.
 
+## Two documents behind the advanced chapters
+
+Neither is a tutorial, and both are short enough to read in an evening. They are the sources the later chapters keep arriving back at.
+
+- [Russ Cox, *Regular Expression Matching Can Be Simple And Fast* ↗](https://swtch.com/~rsc/regexp/regexp1.html) — the article that explains why Go's `regexp` and Rust's `regex` are built the way they are, with the graph everyone has seen: Thompson's construction answering in microseconds where a backtracker takes years. Read it alongside [what a backreference costs](../01_Backreferences/what_a_backreference_costs/README.md) and [catastrophic backtracking](../05_Backtracking/catastrophic_backtracking/README.md). Its sequels cover submatch extraction, which is where [leftmost-first and leftmost-longest](../08_Match_Semantics/leftmost_first_vs_leftmost_longest/README.md) comes from.
+- [Unicode Technical Standard #18, *Unicode Regular Expressions* ↗](https://www.unicode.org/reports/tr18/) — the specification the [Unicode chapter](../06_Unicode/README.md) is measuring engines against. It is the document that names the levels of support, defines what a "simple" versus a "full" case fold is, and says in as many words that `\w` ought to be Unicode-aware. Most of the disagreements in that chapter are engines sitting at different levels of it, which is more forgivable than it looks from the outside.
+
 ## Books
 
 Listed by what they are good for, not by rank.

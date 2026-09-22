@@ -1,0 +1,12 @@
+perl
+pattern                       "1"     "1\n"   "1\nrm -rf /"
+/^\d+$/                       match   match   no
+/\A\d+\z/                     match   no      no
+/\A\d+\Z/                     match   match   no
+/^\d+$/m                      match   match   match
+
+/^(\d+)$/ on "1\n" captured '1'; the subject is still 2 chars
+
+flag                          none    /m      /s
+^\d+$ on "1\nrm -rf /"        no      match   no
+a.b on "a\nb"                 no      no      match

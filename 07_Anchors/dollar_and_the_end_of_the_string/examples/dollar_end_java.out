@@ -1,0 +1,16 @@
+java
+pattern                       "1"     "1\n"   "1\nrm -rf /"
+find(), ^\d+$                 match   match   no
+find(), \A\d+\z               match   no      no
+find(), \A\d+\Z               match   match   no
+find(), MULTILINE ^\d+$       match   match   match
+String.matches("\\d+")        match   no      no
+
+MULTILINE ^\d+$ against one payload per terminator
+"1\nrm -rf /"                 match   match (UNIX_LINES)
+"1\r\nrm -rf /"               match   no (UNIX_LINES)
+"1\u0085rm -rf /"             match   no (UNIX_LINES)
+"1\u2028rm -rf /"             match   no (UNIX_LINES)
+
+find(), ^\d+$ on "1\r\n"      match
+find(), \A\d+\z on "1\r\n"    no

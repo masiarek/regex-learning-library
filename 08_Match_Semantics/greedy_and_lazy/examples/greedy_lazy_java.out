@@ -1,0 +1,22 @@
+characters the engine read, counted by the subject itself
+subject: 100 x, then END   (the match ends at the far end)
+  ^.*END$     match 0..103    reads 111
+  ^.*?END$    match 0..103    reads 203
+  ^[^E]*END$  match 0..103    reads 104
+subject: END, then 100 x   (the match ends at the near end)
+  ^.*END      match 0..3      reads 311
+  ^.*?END     match 0..3      reads 3
+  ^[^E]*END   match 0..3      reads 4
+subject: 200 x, then END   (the same shape, twice as long)
+  ^.*END$     match 0..203    reads 211
+  ^.*?END$    match 0..203    reads 403
+  ^[^E]*END$  match 0..203    reads 204
+subject: <b>bold</b>
+  <.+>        match 0..11     reads 13
+  <.+?>       match 0..3      reads 3
+  <[^>]+>     match 0..3      reads 4
+subject: aaa
+  a+          match 0..3      reads 3
+  a+?         match 0..1      reads 1
+  a*?         match 0..0      reads 0
+  a{1,3}?     match 0..1      reads 1

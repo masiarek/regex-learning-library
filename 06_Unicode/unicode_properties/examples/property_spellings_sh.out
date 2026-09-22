@@ -1,0 +1,30 @@
+does it COMPILE?             python  perl   node u  ruby   java   go
+\p{L}                        no      yes    yes     yes    yes    yes
+\pL                          no      yes    no      yes    yes    yes
+\p{Lu}                       no      yes    yes     yes    yes    yes
+\p{Nd}                       no      yes    yes     yes    yes    yes
+\p{P}                        no      yes    yes     yes    yes    yes
+\p{Greek}                    no      yes    no      yes    no     yes
+\p{Script=Greek}             no      yes    yes     no     yes    no
+\p{sc=Greek}                 no      yes    yes     no     yes    no
+\p{IsGreek}                  no      yes    no      no     yes    no
+\p{Alphabetic}               no      yes    yes     yes    no     no
+\p{IsAlphabetic}             no      yes    no      no     yes    no
+\p{White_Space}              no      yes    yes     yes    no     no
+\p{Alpha}                    no      yes    yes     yes    yes    no
+[\p{L}\p{Nd}]                no      yes    yes     yes    yes    yes
+\X                           no      yes    no      yes    yes    no
+
+and where it compiles, does it MEAN what it says?
+(the two answers are U+0041 and U+03B1; a dash is: did not compile)
+spelling       python    perl      node u    ruby      java      go
+\pL            - -       yes yes   - -       no no     yes yes   yes yes
+\p{Alpha}      - -       yes yes   yes yes   yes yes   yes no    - -
+\p{Greek}      - -       no yes    - -       no yes    - -       no yes
+
+compiled, but ruby warned while doing it:
+  \pL
+
+and what go calls a property it has never heard of:
+  invalid character class range
+  invalid escape sequence

@@ -1,0 +1,13 @@
+subject: n copies of 'a' and then '!', which nothing here can match --
+the engine has to PROVE it, and that is the expensive direction.
+pattern      n=16             n=40
+^(a+)+$      no match         no answer in 5s
+^(?>a+)+$    no match         no match
+^(a++)+$     no match         no match
+
+subject: n copies of 'a' and nothing else -- all three still match it,
+so cutting the backtracking did not cost a single true answer.
+pattern      n=16             n=40
+^(a+)+$      match            match
+^(?>a+)+$    match            match
+^(a++)+$     match            match

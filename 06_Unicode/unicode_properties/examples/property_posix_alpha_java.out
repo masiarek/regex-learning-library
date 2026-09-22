@@ -1,0 +1,37 @@
+general category: the one spelling everybody agrees on
+  \p{L}                 0041 00E9 03B1 0394 0416 4E2D
+  \pL                   0041 00E9 03B1 0394 0416 4E2D
+  \p{Lu}                0041 0394 0416
+  \p{Nd}                0037 0660
+  \p{P}                 2014
+
+script: Java wants Is, or script=, and refuses the bare name
+  \p{Greek}             refused: Unknown character property name {Greek}
+  \p{IsGreek}           03B1 0394
+  \p{script=Greek}      03B1 0394
+  \p{sc=Greek}          03B1 0394
+  \p{InGreek}           03B1 0394
+  \p{IsHan}             4E2D
+
+binary property: Is again
+  \p{Alphabetic}        refused: Unknown character property name {Alphabetic}
+  \p{IsAlphabetic}      0041 00E9 03B1 0394 0416 4E2D
+  \p{White_Space}       refused: Unknown character property name {White_Space}
+  \p{IsWhite_Space}     0009 00A0
+  \p{gc=Lu}             0041 0394 0416
+
+the POSIX names -- same syntax, US-ASCII meaning
+  \p{Alpha}             0041
+  \p{Digit}             0037
+  \p{Upper}             0041
+  \p{Punct}             (nothing)
+
+the same POSIX names under UNICODE_CHARACTER_CLASS, or inline (?U)
+  \p{Alpha}             0041 00E9 03B1 0394 0416 4E2D
+  \p{Digit}             0037 0660
+  \p{Upper}             0041 0394 0416
+  \p{Punct}             2014
+
+grapheme clusters in U+0065 U+0301
+  \X                    1
+  .                     2

@@ -1,0 +1,16 @@
+regex:       refused
+regex parse error:
+    ^(<)?\w+(?(1)>)$
+              ^
+error: unrecognized flag
+
+fancy-regex                    <tag>  tag    <tag
+numbered   (?(1)>)             yes    yes    no
+named      (?(<open>)>)        yes    yes    no
+named      (?(open)>)          no     yes    yes
+named      (?(zz)>)            no     yes    yes
+named      (?(<zz>)>)          refused
+lookaround (?(?=<)...|...)     refused
+DEFINE     (?(DEFINE)...)      refused
+
+(a)(?(2)x|y) with no group 2: refused

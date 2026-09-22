@@ -1,0 +1,39 @@
+== the dot: what it excludes ==
+subject "one\ntwo"
+  one.two                        no match
+  (?s)one.two                    match "one\ntwo"
+subject "one\rtwo"
+  one.two                        match "one\rtwo"
+  (?R)one.two                    no match
+== the letter m: line anchors ==
+subject "one\ntwo\nthree"
+  ^two$                          no match
+  (?m)^two$                      match "two"
+  (?m)one.two                    no match
+subject "abc\r\ndef"
+  (?m)^abc$                      no match
+  (?mR)^abc$                     match "abc"
+== free-spacing: (?x) ==
+  one line                       match "2026-09-22"
+  (?x)                           match "2026-09-22"
+  (?x)a b   on "a b"             no match
+  (?x)a b   on "ab"              match "ab"
+  (?x)a\ b  on "a b"             match "a b"
+  (?x)a#b   on "a#b"             match "a"
+== the letter U, Go and Rust only ==
+  a+      on "aaa"               match "aaa"
+  (?U)a+  on "aaa"               match "a"
+== inline and scoped modifiers ==
+  abc            on ABC          no match
+  (?i)abc        on ABC          match "ABC"
+  (?i:b)c        on Bc           match "Bc"
+  (?i:b)c        on bC           no match
+  (?i)ab(?-i:cd) on ABcd         match "ABcd"
+  (?i)ab(?-i:cd) on ABCD         no match
+  a(?i)bc        on aBC          match "aBC"
+  a(?i)bc        on ABC          no match
+  (a(?i)b)c      on aBc          match "aBc"
+  (a(?i)b)c      on abC          no match
+== the argument form, for comparison ==
+  RegexBuilder case_insensitive  match "ABC"
+  its pattern string             abc

@@ -1,0 +1,24 @@
+subject       <b>bold</b>
+  <.+>      first match '<b>bold</b>'
+  <.+?>     first match '<b>'
+  <[^>]+>   first match '<b>'
+  <.+>      findall     ['<b>bold</b>']
+  <.+?>     findall     ['<b>', '</b>']
+  <[^>]+>   findall     ['<b>', '</b>']
+  <.+>      sub to ''   ''
+  <.+?>     sub to ''   'bold'
+  <[^>]+>   sub to ''   'bold'
+subject       aaa
+  a+        first match 'aaa'
+  a+?       first match 'a'
+  a*?       first match ''
+  a{1,3}?   first match 'a'
+subject       name="ada", role="pilot"
+  "(.*)"    group 1     'ada", role="pilot'
+  "(.*?)"   group 1     'ada'
+  "([^"]*)" group 1     'ada'
+subject       name="ada", role="pilot"
+  name=.*   match       'name="ada", role="pilot"'
+  name=.*?  match       'name='
+  name=.*$  match       'name="ada", role="pilot"'
+  name=.*?$ match       'name="ada", role="pilot"'

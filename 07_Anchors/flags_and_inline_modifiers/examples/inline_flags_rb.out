@@ -1,0 +1,34 @@
+== the dot: what it excludes ==
+subject "one\ntwo"
+  /one.two/                      no match
+  /one.two/m                     match "one\ntwo"
+  /(?m)one.two/                  match "one\ntwo"
+  "(?s)one.two"                  compile error
+subject "one\rtwo"
+  /one.two/                      match "one\rtwo"
+== the letter m is NOT multiline here ==
+subject "one\ntwo\nthree"
+  /^two$/   no flag              match "two"
+  /^two$/m                       match "two"
+subject "abc\r\ndef"
+  /^abc$/                        no match
+  /^abc\r?$/                     match "abc\r"
+== free-spacing: /x ==
+  one line                       match "2026-09-22"
+  /x                             match "2026-09-22"
+  /a b/x  on "a b"               no match
+  /a b/x  on "ab"                match "ab"
+  /a\ b/x on "a b"               match "a b"
+  /a#b/x  on "a#b"               match "a"
+== inline and scoped modifiers ==
+  /abc/           on ABC         no match
+  /abc/i          on ABC         match "ABC"
+  /(?i)abc/       on ABC         match "ABC"
+  /(?i:b)c/       on Bc          match "Bc"
+  /(?i:b)c/       on bC          no match
+  /(?i)ab(?-i:cd)/ on ABcd       match "ABcd"
+  /(?i)ab(?-i:cd)/ on ABCD       no match
+  /a(?i)bc/       on aBC         match "aBC"
+  /a(?i)bc/       on ABC         no match
+  /(a(?i)b)c/     on aBc         match "aBc"
+  /(a(?i)b)c/     on abC         no match

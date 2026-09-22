@@ -1,0 +1,16 @@
+ruby
+pattern                       "1"     "1\n"   "1\nrm -rf /"
+/^\d+$/                       match   match   match
+/\A\d+\z/                     match   no      no
+/\A\d+\Z/                     match   match   no
+/(?-m)^\d+$/                  match   match   match
+
+/^\d+$/ matched "1" inside a 10-char subject
+
+flag                          none    /m      (?-m)
+^\d+$ on "1\nrm -rf /"        match   match   match
+a.b on "a\nb"                 no      match   no
+
+on "rm -rf /\n1":
+  /^\d+$/                     match
+  /\A\d+$/                    no

@@ -1,0 +1,23 @@
+re, asked for a Unicode property
+  \p{L}      re.error: bad escape \p at position 0
+  \P{L}      re.error: bad escape \P at position 0
+  [\p{L}]    re.error: bad escape \p at position 1
+  \pL        re.error: bad escape \p at position 0
+  \p{Greek}  re.error: bad escape \p at position 0
+
+what the standard library offers instead
+  code point  isalpha()  isdecimal()  category
+  0009        False      False        Cc
+  0037        False      True         Nd
+  0041        True       False        Lu
+  00A0        False      False        Zs
+  00E9        True       False        Ll
+  03B1        True       False        Ll
+  0394        True       False        Lu
+  0416        True       False        Lu
+  0660        False      True         Nd
+  2014        False      False        Pd
+  4E2D        True       False        Lo
+
+one script, spelled as an explicit range
+  [U+0370-U+03FF] matches: 03B1 0394

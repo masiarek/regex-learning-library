@@ -1,0 +1,13 @@
+subject: <b>bold</b>
+  pattern   Compile        CompilePOSIX
+  <.+>      "<b>bold</b>"  "<b>bold</b>"
+  <.+?>     "<b>"          "<b>bold</b>"
+  <[^>]+>   "<b>"          "<b>"
+subject: aaa
+  pattern   Compile        CompilePOSIX
+  a+        "aaa"          "aaa"
+  a+?       "a"            "aaa"
+  a*?       ""             "aaa"
+  a{1,3}?   "a"            "aaa"
+subject: <b>bold</b> -- one pattern, before and after Longest()
+  <.+?>     "<b>"          "<b>bold</b>" after Longest()

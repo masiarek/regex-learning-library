@@ -13,6 +13,11 @@ The languages in front are **Rust, Python and ABAP**, with **Perl, JavaScript, R
 | [Start here](00_Start_Here/README.md) | The one rule, the four engine lineages, and where to go first. |
 | [Backreferences](01_Backreferences/README.md) | `\1` matches *text*, not a pattern. Four lessons: what it is, forward references, the `$1` that is not a backreference at all, and what the feature costs. |
 | [Lookaround](02_Lookaround/README.md) | Zero-width assertions, the two traps everyone hits, and how wide a lookbehind may be in seven engines. |
+| [Backtracking](05_Backtracking/README.md) | The patterns everybody writes that never answer, and the `(?>…)` / `a++` that fix them by changing what they match. |
+| [Unicode](06_Unicode/README.md) | What `\w` and `\b` mean once the subject is not ASCII, `\p{…}` and its misspellings, and the folding table behind `(?i)`. |
+| [Anchors and flags](07_Anchors/README.md) | `$` is not the end of the string, and `m` means two different things depending on which engine you ask. |
+| [Match semantics](08_Match_Semantics/README.md) | Leftmost-first against leftmost-longest, greedy against lazy: one pattern, two engines, different answers, no error. |
+| [Recursion and conditionals](09_Recursion/README.md) | `(?R)`, `\g<0>`, `(?(1)…)` and `(?(DEFINE)…)` — including the engines that accept the syntax while meaning something else. |
 | [Engines](03_Engines/README.md) | Eleven constructs × five engines, measured by compiling each pattern. Where ABAP sits, and what to write in Rust and Go, which have no lookaround at all. |
 | [Resources](04_Resources/README.md) | Official documentation per engine, books worth owning, and the sibling libraries. |
 
@@ -38,7 +43,7 @@ python3 tools/check_all.py             # every gate CI runs, in CI's order
 uv run --group docs mkdocs serve       # preview the site
 ```
 
-Twenty-three examples in Python, Perl, JavaScript, Go, Rust, bash, grep and sed run on every push. The ABAP examples are source-only and say so — see [CONTRIBUTING.md](CONTRIBUTING.md).
+Ninety-two examples in Python, Perl, JavaScript, Ruby, Java, C, Go, Rust, bash, grep and sed run on every push, on Ubuntu — which is a second machine, not the one they were written on, and so a second opinion about every answer key. The fourteen ABAP examples are source-only and say so; abaplint parses them instead — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Site
 

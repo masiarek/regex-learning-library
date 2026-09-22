@@ -1,0 +1,12 @@
+javascript
+pattern                       "1"     "1\n"   "1\nrm -rf /"
+/^\d+$/                       match   no      no
+/^\d+$/m                      match   match   match
+
+/\A\d+\z/ on "A1z"            match
+/\A\d+\z/ on "1"              no
+new RegExp("\\A\\d+\\z", "u") SyntaxError
+
+flag                          none    m       s
+^\d+$ on "1\nrm -rf /"        no      match   no
+a.b on "a\nb"                 no      no      match

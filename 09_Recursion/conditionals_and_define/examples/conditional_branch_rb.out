@@ -1,0 +1,11 @@
+                               <tag>  tag    <tag
+numbered   (?(1)>)             yes    yes    no
+named      (?(<open>)>)        yes    yes    no
+named      (?(open)>)          compile error
+lookaround (?(?=<)...|...)     compile error
+DEFINE     (?(DEFINE)...)      compile error
+
+(a)(?(2)x|y) with no group 2: compile error
+(?<R>x)(?(R)y|n):             compile error
+(?<R>x)(?(<R>)y|n) on xy  yes
+(?<R>x)(?(<R>)y|n) on xn  no

@@ -1,0 +1,12 @@
+patterns with no backreference, go regexp:
+  ^(a+)+$                  120 a's then '!'       no match
+  ^(a+)+$                  1000000 a's then '!'   no match
+  ^(a|a)*$                 1000000 a's then '!'   no match
+  ^(\s*|\t)+$              1000000 spaces, '!'    no match
+  ^(\w+\s?)*$              1000000 a's then '!'   no match
+  ^([a-z]{2,4})+$          1000000 a's then '!'   no match
+  the email regex          a@a. then a megabyte   no match
+
+the fixes the other engines need, handed to RE2:
+  ^(?>a+)+$                error parsing regexp: invalid or unsupported Perl syntax: `(?>`
+  ^(a++)+$                 error parsing regexp: invalid nested repetition operator: `++`

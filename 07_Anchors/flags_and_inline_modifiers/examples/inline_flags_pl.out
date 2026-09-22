@@ -1,0 +1,37 @@
+== the dot: what it excludes ==
+subject "one\ntwo"
+  one.two                        no match
+  one.two /s                     match "one\ntwo"
+  (?s)one.two                    match "one\ntwo"
+subject "one\rtwo"
+  one.two                        match "one\rtwo"
+== the letter m: line anchors ==
+subject "one\ntwo\nthree"
+  ^two$                          no match
+  ^two$ /m                       match "two"
+  (?m)^two$                      match "two"
+  one.two /m                     no match
+subject "abc\r\ndef"
+  ^abc$ /m                       no match
+  ^abc\r?$ /m                    match "abc\r"
+== free-spacing: /x and /xx ==
+  one line                       match "2026-09-22"
+  /x                             match "2026-09-22"
+  a b    /x  on "a b"            no match
+  a b    /x  on "ab"             match "ab"
+  a\ b   /x  on "a b"            match "a b"
+  a#b    /x  on "a#b"            match "a"
+  [a b]b /x  on "a b"            match " b"
+  [a b]b /xx on "a b"            no match
+== inline and scoped modifiers ==
+  abc            on ABC          no match
+  abc /i         on ABC          match "ABC"
+  (?i)abc        on ABC          match "ABC"
+  (?i:b)c        on Bc           match "Bc"
+  (?i:b)c        on bC           no match
+  (?i)ab(?-i:cd) on ABcd         match "ABcd"
+  (?i)ab(?-i:cd) on ABCD         no match
+  a(?i)bc        on aBC          match "aBC"
+  a(?i)bc        on ABC          no match
+  (a(?i)b)c      on aBc          match "aBc"
+  (a(?i)b)c      on abC          no match

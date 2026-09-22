@@ -1,0 +1,24 @@
+does /i match?            javascript, anchored
+pattern   subject                                        /i   /iu
+k         U+004B LATIN CAPITAL LETTER K                  yes  yes
+k         U+212A KELVIN SIGN                             no   yes
+s         U+017F LATIN SMALL LETTER LONG S               no   yes
+U+00DF    U+1E9E LATIN CAPITAL LETTER SHARP S            no   yes
+U+1E9E    U+00DF LATIN SMALL LETTER SHARP S              no   yes
+ss        U+00DF LATIN SMALL LETTER SHARP S              no   no
+[k]       U+212A KELVIN SIGN                             no   yes
+[a-z]     U+212A KELVIN SIGN                             no   yes
+i         U+0131 LATIN SMALL LETTER DOTLESS I            no   no
+i         U+0130 LATIN CAPITAL LETTER I WITH DOT ABOVE   no   no
+i U+0307  U+0130 LATIN CAPITAL LETTER I WITH DOT ABOVE   no   no
+
+does /i fold the BACKREFERENCE comparison too?
+(a)\1 /i     vs 'a' + U+0041            yes
+(k)\1 /iu    vs 'k' + U+212A            yes
+
+one program, two answers about the same pair
+  toUpperCase(U+00DF) === 'SS'      true    regex /iu:  no
+  toLowerCase(U+212A) === 'k'       true    regex /iu:  yes
+  toLowerCase(U+212A) === 'k'       true    regex /i:   no
+  toUpperCase(U+017F) === 'S'       true    regex /iu:  yes
+  toLowerCase(U+1E9E) === U+00DF    true    regex /iu:  yes

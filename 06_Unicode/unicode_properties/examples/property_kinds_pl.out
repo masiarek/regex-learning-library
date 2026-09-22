@@ -1,0 +1,42 @@
+the cast
+  0009  CHARACTER TABULATION
+  0037  DIGIT SEVEN
+  0041  LATIN CAPITAL LETTER A
+  00A0  NO-BREAK SPACE
+  00E9  LATIN SMALL LETTER E WITH ACUTE
+  03B1  GREEK SMALL LETTER ALPHA
+  0394  GREEK CAPITAL LETTER DELTA
+  0416  CYRILLIC CAPITAL LETTER ZHE
+  0660  ARABIC-INDIC DIGIT ZERO
+  2014  EM DASH
+  4E2D  CJK UNIFIED IDEOGRAPH-4E2D
+
+general category -- what KIND of character it is
+  \p{L}                   0041 00E9 03B1 0394 0416 4E2D
+  \p{Lu}                  0041 0394 0416
+  \p{Ll}                  00E9 03B1
+  \p{Lo}                  4E2D
+  \p{Nd}                  0037 0660
+  \p{Zs}                  00A0
+  \p{P}                   2014
+  \P{L}                   0009 0037 00A0 0660 2014
+
+script -- what WRITING SYSTEM it belongs to
+  \p{Greek}               03B1 0394
+  \p{Cyrillic}            0416
+  \p{Script=Han}          4E2D
+  \p{Latin}               0041 00E9
+
+binary property -- one yes/no fact the standard records
+  \p{Alphabetic}          0041 00E9 03B1 0394 0416 4E2D
+  \p{Uppercase}           0041 0394 0416
+  \p{White_Space}         0009 00A0
+
+composed inside a character class
+  [\p{L}\p{Nd}]           0037 0041 00E9 03B1 0394 0416 0660 4E2D
+  [\p{Greek}\p{Cyrillic}] 03B1 0394 0416
+  [^\p{L}]                0009 0037 00A0 0660 2014
+
+grapheme clusters in U+0065 U+0301
+  \X                      1
+  .                       2

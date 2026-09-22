@@ -70,7 +70,7 @@ That last line is the shape of a good failure. The engine counts its steps and g
 
 1. **Prefer an engine with a guarantee** for anything that touches untrusted input. In Rust that means reaching for `fancy-regex` deliberately, not by default. In Go the choice was made for you.
 2. **Anchor, and make alternatives mutually exclusive.** Most catastrophic patterns contain a nested quantifier over something that can match the same text two ways — `(a+)+`, `(a|a)*`, `(\s*|\t)+`.
-3. **Use an atomic group or a possessive quantifier** where the engine has them: `(?>a+)+` and `a++` both tell the engine "having matched this, never give it back". Python has had both since 3.11; Perl, PCRE2, Java and Ruby have had them for years; JavaScript has neither.
+3. **Use an atomic group or a possessive quantifier** where the engine has them: `(?>a+)+` and `a++` both tell the engine "having matched this, never give it back". Python has had both since 3.11; Perl, PCRE2, Java and Ruby have had them for years; JavaScript has neither. Read [what they do to the match](../../05_Backtracking/atomic_groups_and_possessive_quantifiers/README.md) before reaching for one — the change is not only to the speed.
 4. **Set a limit if the engine offers one**, and treat hitting it as a bug report about the pattern.
 5. **Do the comparison in the host language.** The Go example in [what a backreference is](../what_a_backreference_is/README.md) matches two groups and compares them in Go — never exponential, and obvious to read.
 
@@ -85,3 +85,5 @@ That last line is the shape of a good failure. The engine counts its steps and g
 - [What a backreference is](../what_a_backreference_is/README.md) — the feature being paid for.
 - [Who supports what](../../03_Engines/who_supports_what/README.md) — which engines have atomic groups and possessive quantifiers, measured.
 - [Lookahead and lookbehind](../../02_Lookaround/lookahead_and_lookbehind/README.md) — the other feature that forces a backtracking engine.
+- [Catastrophic backtracking, with no backreference anywhere](../../05_Backtracking/catastrophic_backtracking/README.md) — the same explosion in patterns that use none of this chapter's features, measured across seven engines. This page is the theory; that one is the afternoon it costs you.
+- [Atomic groups and possessive quantifiers](../../05_Backtracking/atomic_groups_and_possessive_quantifiers/README.md) — the construct recommended above, and what it does to the match.

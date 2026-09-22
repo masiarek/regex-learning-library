@@ -1,0 +1,35 @@
+without the u flag, \p is the letter p
+  /^\p{L}$/ on the 4-character text p{L}    true
+  /^\p{L}$/ on U+03B1                       false
+  /^\P{L}$/ on the 4-character text P{L}    true
+
+with the u flag, does it compile?
+  \p{L}                       compiles
+  \pL                         refused
+  \p{Lu}                      compiles
+  \p{Nd}                      compiles
+  \p{P}                       compiles
+  \p{Greek}                   refused
+  \p{Script=Greek}            compiles
+  \p{sc=Greek}                compiles
+  \p{Script_Extensions=Greek} compiles
+  \p{Alphabetic}              compiles
+  \p{Alpha}                   compiles
+  \p{White_Space}             compiles
+  \p{gc=Lu}                   compiles
+  [\p{L}\p{Nd}]               compiles
+  \X                          refused
+
+and what the ones that compile match
+  \p{L}                       0041 00E9 03B1 0394 0416 4E2D
+  \p{Lu}                      0041 0394 0416
+  \p{Nd}                      0037 0660
+  \p{P}                       2014
+  \p{Script=Greek}            03B1 0394
+  \p{sc=Greek}                03B1 0394
+  \p{Script_Extensions=Greek} 03B1 0394
+  \p{Alphabetic}              0041 00E9 03B1 0394 0416 4E2D
+  \p{Alpha}                   0041 00E9 03B1 0394 0416 4E2D
+  \p{White_Space}             0009 00A0
+  \p{gc=Lu}                   0041 0394 0416
+  [\p{L}\p{Nd}]               0037 0041 00E9 03B1 0394 0416 0660 4E2D

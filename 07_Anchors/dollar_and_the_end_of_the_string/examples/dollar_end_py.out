@@ -1,0 +1,17 @@
+python re
+pattern                       "1"     "1\n"   "1\nrm -rf /"
+search(r"^\d+$")              match   match   no
+search(r"\A\d+\Z")            match   no      no
+search(r"(?m)^\d+$")          match   match   match
+fullmatch(r"\d+")             match   no      no
+
+^\d+$ on "1\n" matched '1' and ended at offset 1 of 2
+
+flag                          off     re.M    re.S
+^\d+$ on "1\nrm -rf /"        no      match   no
+a.b on "a\nb"                 no      no      match
+
+with re.M, on "rm -rf /\n1":
+  ^\d+$                       match
+  \A\d+$                      no
+  (?-m:^\d+$)                 no

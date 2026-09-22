@@ -1,0 +1,33 @@
+general category
+  \p{L}                         0041 00E9 03B1 0394 0416 4E2D
+  \pL                           0041 00E9 03B1 0394 0416 4E2D
+  \p{Lu}                        0041 0394 0416
+  \p{Nd}                        0037 0660
+  \p{Zs}                        00A0
+  \p{P}                         2014
+  \P{L}                         0009 0037 00A0 0660 2014
+
+script -- every spelling this page has met
+  \p{Greek}                     03B1 0394
+  \p{Script=Greek}              03B1 0394
+  \p{sc=Greek}                  03B1 0394
+  \p{IsGreek}                   03B1 0394
+  \p{Script_Extensions=Greek}   03B1 0394
+  \p{Han}                       4E2D
+
+binary property
+  \p{Alphabetic}                0041 00E9 03B1 0394 0416 4E2D
+  \p{Uppercase}                 0041 0394 0416
+  \p{White_Space}               0009 00A0
+  \p{Alpha}                     0041 00E9 03B1 0394 0416 4E2D
+  \p{Any}                       0009 0037 0041 00A0 00E9 03B1 0394 0416 0660 2014 4E2D
+
+set operations inside a class -- regex alone among these engines
+  [\p{L}\p{Nd}]                 0037 0041 00E9 03B1 0394 0416 0660 4E2D
+  [\p{Greek}&&\p{Lu}]           0394
+  [\p{L}--\p{Greek}]            0041 00E9 0416 4E2D
+  [\p{Greek}~~\p{Lu}]           0041 03B1 0416
+
+no grapheme cluster escape in either crate
+  regex        error: unrecognized escape sequence
+  fancy-regex  Parsing error at position 0: Invalid escape: \X

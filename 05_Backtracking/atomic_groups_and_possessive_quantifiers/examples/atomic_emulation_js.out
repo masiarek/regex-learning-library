@@ -1,0 +1,11 @@
+(?>a+)b  SyntaxError
+a++b     SyntaxError
+a*+b     SyntaxError
+a?+b     SyntaxError
+a+a                    on "aa"           -> "aa"
+(?=(a+))\1a            on "aa"           -> no match
+(?=(a+))\1b            on "aab"          -> "aab"
+^[\w.]+\.com$          on "example.com"  -> "example.com"
+^(?=([\w.]+))\1\.com$  on "example.com"  -> no match
+emulated atomic on 30 a's and a '!': false
+emulated atomic on 30 a's: true

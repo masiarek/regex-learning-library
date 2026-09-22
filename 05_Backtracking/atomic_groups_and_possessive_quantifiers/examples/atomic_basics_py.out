@@ -1,0 +1,19 @@
+1. a++ is exactly (?>a+): greedy, and then never gives a character back
+  a+a                   on 'aa'            -> 'aa'
+  a++a                  on 'aa'            -> no match
+  (?>a+)a               on 'aa'            -> no match
+  a+b                   on 'aab'           -> 'aab'
+  a++b                  on 'aab'           -> 'aab'
+  (?>a+)b               on 'aab'           -> 'aab'
+2. and they agree on every subject, not just these
+  (?>a+)b and a++b answer alike on 8 subjects: True
+3. the 'optimisation' that silently stops matching
+  ^[\w.]+\.com$         on 'example.com'   -> 'example.com'
+  ^[\w.]++\.com$        on 'example.com'   -> no match
+4. and the one that is free, because the class cannot overlap
+  ^\d+\.\d+$            on '3.14'          -> '3.14'
+  ^\d++\.\d+$           on '3.14'          -> '3.14'
+5. the lookahead-and-backreference emulation, which needs neither feature
+  (?=(a+))\1a           on 'aaa'           -> no match
+  (?=(a+))\1b           on 'aab'           -> 'aab'
+  ^(?=([\w.]+))\1\.com$ on 'example.com'   -> no match

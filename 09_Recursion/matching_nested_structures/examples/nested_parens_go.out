@@ -1,0 +1,19 @@
+does it COMPILE?
+  (?R)     false
+  (?1)     false
+  (?&p)    false
+  \g<0>    false
+
+unrolled to depth 4, 55 characters of pattern:
+  \((?:[^()]|\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\))*\)
+
+how deep does it reach?
+  depth 1  (a)            true
+  depth 2  ((a))          true
+  depth 3  (((a)))        true
+  depth 4  ((((a))))      true
+  depth 5  (((((a)))))    false
+  depth 6  ((((((a))))))  false
+
+the pattern cannot be written to reach every depth: each level
+is another copy of the one below it, and there is no last level.

@@ -1,0 +1,18 @@
+the budget is 20000000 character reads per match; running out is reported as "still searching".
+
+patterns with no backreference, java:
+  ^(a+)+$                  120 a's then '!'       no match
+  ^(a|a)*$                 120 a's then '!'       no match
+  ^(\s*|\t)+$              120 spaces then '!'    no match
+  ^(\w+\s?)*$              120 a's then '!'       no match
+  ^([a-z]{2,4})+$          120 a's then '!'       no match
+  the email regex          a@a. 120 a's then '!'  no match
+
+the same patterns, on a field a user filled with a megabyte:
+  ^(a+)+$                  1000000 a's then '!'   still searching
+  ^(?>a+)+$                1000000 a's then '!'   no match
+  ^a+$                     1000000 a's then '!'   no match
+  the email regex, fixed   a@a. then a megabyte   no match
+
+and the control, so the budget above is not mistaken for a guarantee:
+  ^(a+)+\1$                28 a's then '!'        still searching

@@ -1,0 +1,14 @@
+"no answer" means the match was still running after 3 seconds and was abandoned.
+
+patterns with no backreference, perl:
+  ^(a+)+$                  120 a's then '!'       no match
+  ^(a|a)*$                 120 a's then '!'       no match
+  ^(\s*|\t)+$              120 spaces then '!'    no match
+  ^(\w+\s?)*$              120 a's then '!'       no match
+  ^([a-z]{2,4})+$          120 a's then '!'       no match
+  the email regex          a@a. 120 a's then '!'  no match
+
+the same patterns, on a field a user filled with a megabyte:
+  ^(a+)+$                  1000000 a's then '!'   no answer
+  ^(?>a+)+$                1000000 a's then '!'   no match
+  ^a+$                     1000000 a's then '!'   no match

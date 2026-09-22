@@ -1,0 +1,33 @@
+decoded text, default (unicode_strings, from use v5.36):
+                                         \w    \d    \s
+U+0041 LATIN CAPITAL LETTER A            yes   no    no
+U+00E9 LATIN SMALL LETTER E WITH ACUTE   yes   no    no
+U+0301 COMBINING ACUTE ACCENT            yes   no    no
+U+0660 ARABIC-INDIC DIGIT ZERO           yes   yes   no
+U+FF11 FULLWIDTH DIGIT ONE               yes   yes   no
+U+00A0 NO-BREAK SPACE                    no    no    yes
+U+3000 IDEOGRAPHIC SPACE                 no    no    yes
+
+the /a flag restricts the same pattern to ASCII:
+  U+0041 LATIN CAPITAL LETTER A            \w yes  \d no
+  U+00E9 LATIN SMALL LETTER E WITH ACUTE   \w no   \d no
+  U+0301 COMBINING ACUTE ACCENT            \w no   \d no
+  U+0660 ARABIC-INDIC DIGIT ZERO           \w no   \d no
+  U+FF11 FULLWIDTH DIGIT ONE               \w no   \d no
+  U+00A0 NO-BREAK SPACE                    \w no   \d no
+  U+3000 IDEOGRAPHIC SPACE                 \w no   \d no
+
+characters up to U+00FF without the unicode_strings feature (pre-5.12):
+  U+0041 LATIN CAPITAL LETTER A            \w yes  \s no
+  U+00E9 LATIN SMALL LETTER E WITH ACUTE   \w no   \s no
+  U+00A0 NO-BREAK SPACE                    \w no   \s no
+
+the same twelve characters of text, decoded and not decoded:
+  decoded text  length 12   \b\w+\b -> 2   na\u00EFve reader
+  raw UTF-8     length 13   \b\w+\b -> 3   na\xC3 ve reader
+
+a number that \d accepts and arithmetic does not (U+0660 U+0661 U+0662):
+  =~ /^\d+$/   -> yes
+  =~ /^\d+$/a  -> no
+  0 + $n       -> 0
+  sprintf %d   -> 0

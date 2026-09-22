@@ -1,0 +1,7 @@
+patterns with no backreference, rust:
+  regex        ^(a+)+$           120 a's then '!'       no match
+  regex        ^(a+)+$           100000 a's then '!'    no match
+  regex        the email regex   100000 a's then '!'    no match
+  fancy-regex  ^(?=a)(a+)+$      120 a's then '!'       no match
+  fancy-regex  ^((?=a)a+)+$      120 a's then '!'       Error executing regex: Max limit for backtracking count exceeded
+  fancy-regex  ^((?=a)(?>a+))+$  120 a's then '!'       no match
