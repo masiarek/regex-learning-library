@@ -1,0 +1,6 @@
+Sunshine1  rules matched [0, 1, 2]  accepted true
+sunshine1  rules matched [0, 2]  accepted false
+Sun1       rules matched [0, 1, 2]  accepted false
+sunshine1 is missing: ["an uppercase letter"]
+not in EUR: 90
+after EUR: "250" at byte 4

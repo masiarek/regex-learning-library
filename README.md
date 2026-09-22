@@ -13,7 +13,7 @@ The languages in front are **Rust, Python and ABAP**, with **Perl, JavaScript, R
 | [Start here](00_Start_Here/README.md) | The one rule, the four engine lineages, and where to go first. |
 | [Backreferences](01_Backreferences/README.md) | `\1` matches *text*, not a pattern. Four lessons: what it is, forward references, the `$1` that is not a backreference at all, and what the feature costs. |
 | [Lookaround](02_Lookaround/README.md) | Zero-width assertions, the two traps everyone hits, and how wide a lookbehind may be in seven engines. |
-| [Engines](03_Engines/README.md) | Eleven constructs × five engines, measured by compiling each pattern. Plus where ABAP sits. |
+| [Engines](03_Engines/README.md) | Eleven constructs × five engines, measured by compiling each pattern. Where ABAP sits, and what to write in Rust and Go, which have no lookaround at all. |
 | [Resources](04_Resources/README.md) | Official documentation per engine, books worth owning, and the sibling libraries. |
 
 ## A taste of it
