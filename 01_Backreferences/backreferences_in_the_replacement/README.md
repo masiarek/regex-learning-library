@@ -4,6 +4,8 @@
 
 **Level:** 101 · anyone who has written `s/…/…/` or `re.sub`
 
+**Keywords on this page:** [`$1` in the replacement](../../10_Keywords/replacement_references/README.md) · [`(…)`](../../10_Keywords/capturing_group/README.md) · [`\1`](../../10_Keywords/backreference/README.md) — **Topics:** [Search and replace](../../11_Topics/search_and_replace/README.md) · [Escaping and literal text](../../11_Topics/escaping_and_literal_text/README.md)
+
 They look identical and they are different mechanisms. In a **pattern**, `\1` constrains what can match. In a **replacement**, `\1` is a placeholder filled in after the match succeeded. The confusion is not the reader's fault: sed uses `\1` for both, and most of us met sed first.
 
 The second half of the confusion is that the languages disagree about the character. Roughly: **Perl, JavaScript and ABAP say `$1`; Python and sed say `\1`.**

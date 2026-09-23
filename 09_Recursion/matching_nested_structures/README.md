@@ -4,6 +4,8 @@
 
 **Level:** 301 · you are about to match something nested with a regex, or about to decide not to
 
+**Keywords on this page:** [`(?R)`](../../10_Keywords/recursion_and_subroutine_calls/README.md) · [`\1`](../../10_Keywords/backreference/README.md) · [`(?<name>…)`](../../10_Keywords/named_group/README.md) · [`(?(1)…)`](../../10_Keywords/conditional/README.md) — **Topics:** [Choosing an engine](../../11_Topics/choosing_an_engine/README.md) · [Readable patterns](../../11_Topics/readable_patterns/README.md)
+
 ## The wall, one level up
 
 [What a backreference costs](../../01_Backreferences/what_a_backreference_costs/README.md) is about the first wall: `(\w+) \1` is not a regular language, so an engine that offers it must abandon the finite automaton and search. Nesting is the same wall a level higher. A finite automaton has finitely many states, and "how many parentheses are still open" is an unbounded counter — for every automaton you can write down a depth it cannot count to. That is not a limitation of any implementation; it is what *regular* means.

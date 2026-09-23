@@ -1,0 +1,8 @@
+construct                python      perl            node        ruby        java        go          rust        fancy
+first occurrence only    f0o boo     f0o boo         f0o boo     f0o boo     f0o boo     f0o boo     f0o boo     f0o boo
+$1 in the template       $2 at $1    host at me      host at me  $2 at $1    host at me  host at me  host at me  host at me
+\1 in the template       host at me  \u{2} at \u{1}  \\2 at \\1  host at me  2 at 1      \\2 at \\1  \\2 at \\1  \\2 at \\1
+\U$1 uppercases in Perl  err         WORD            \\Uword     \\U$1       Uword       \\Uword     \\Uword     \\Uword
+empty match replaced     -ab         -ab             -ab         -ab         -ab         -ab         -ab         -ab
+lookahead keeps context  NN EUR      NN EUR          NN EUR      NN EUR      NN EUR      -           -           NN EUR
+\K keeps the prefix      -           price=NN        no          price=NN    -           -           -           price=NN

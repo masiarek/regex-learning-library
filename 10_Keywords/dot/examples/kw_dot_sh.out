@@ -1,0 +1,11 @@
+construct               python     perl       node       ruby       java       go         rust       fancy
+ordinary                axb        axb        axb        axb        axb        axb        axb        axb
+across \n               no         no         no         no         no         no         no         no
+across \n with (?s)     a\nb       a\nb       -          -          a\nb       a\nb       a\nb       a\nb
+across \n, node s flag  no         no         a\nb       no         no         no         no         no
+across \n with (?m)     no         no         -          a\nb       no         no         no         no
+across \r               a\rb       a\rb       no         a\rb       no         a\rb       a\rb       a\rb
+one astral character    \u{1F600}  \u{1F600}  no         \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}
+astral, node u flag     \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}
+escaped dot             no         no         no         no         no         no         no         no
+dot inside a class      no         no         no         no         no         no         no         no

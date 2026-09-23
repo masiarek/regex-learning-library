@@ -1,0 +1,2 @@
+with \G:    x = 42 ERROR at 6
+without \G: x = 42 y7

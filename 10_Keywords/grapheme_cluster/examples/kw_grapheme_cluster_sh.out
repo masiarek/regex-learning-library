@@ -1,0 +1,6 @@
+construct                  python  perl                        node  ruby                        java                        go  rust  fancy
+. on e + combining accent  e       e                           e     e                           e                           e   e     e
+\X on e + accent           -       e\u{301}                    no    e\u{301}                    e\u{301}                    -   -     -
+\X on a ZWJ sequence       -       \u{1F468}\u{200D}\u{1F469}  no    \u{1F468}\u{200D}\u{1F469}  \u{1F468}\u{200D}\u{1F469}  -   -     -
+\X on a flag pair          -       \u{1F1EB}\u{1F1F7}          no    \u{1F1EB}\u{1F1F7}          \u{1F1EB}\u{1F1F7}          -   -     -
+\X in JavaScript           -       X                           X     X                           X                           -   -     -

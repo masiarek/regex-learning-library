@@ -1,0 +1,13 @@
+construct                   python  perl     node  ruby     java     go       rust     fancy
+(?P<n>…) Python-style name  a       a        -     -        -        a        a        a
+(?<n>…) everyone else       -       a        a     a        a        a        a        a
+\z true end                 -       a        no    a        a        a        a        a
+\Z, two meanings            no      a        no    a        a        -        -        a
+\p{L}                       -       \u{3B1}  no    \u{3B1}  \u{3B1}  \u{3B1}  \u{3B1}  \u{3B1}
+\h horizontal space         -       \t       no    no       \t       -        -        no
+a++ possessive              no      no       -     no       no       -        aa       no
+(?>…) atomic                no      no       -     no       no       -        -        no
+(?<=a|bc) two-width         -       d        d     d        d        -        -        d
+{,2} open lower bound       aa      aa       no    aa       -        no       -        aa
+(?R) recursion              -       (a(b))   -     -        -        -        (b)      -
+\Q…\E                       -       no       no    no       a.b      a.b      -        -

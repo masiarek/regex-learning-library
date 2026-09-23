@@ -1,0 +1,9 @@
+construct                 python  perl  node  ruby  java  go    rust  fancy
+b* takes nothing          ac      ac    ac    ac    ac    ac    ac    ac
+b+ needs one              no      no    no    no    no    no    no    no
+b? takes at most one      no      no    no    no    no    no    no    no
+* on a subject with none  ""      ""    ""    ""    ""    ""    ""    ""
+? is greedy too           a       a     a     a     a     a     a     a
+stacked quantifiers x**   -       -     -     xx    -     -     xx    -
+quantifier on nothing     -       -     -     -     -     -     -     -
+quantified group          abab    abab  abab  abab  abab  abab  abab  abab

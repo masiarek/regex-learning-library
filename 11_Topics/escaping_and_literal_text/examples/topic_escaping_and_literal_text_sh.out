@@ -1,0 +1,12 @@
+construct               python  perl    node  ruby    java    go    rust  fancy
+unescaped dot           axb     axb     axb   axb     axb     axb   axb   axb
+escaped dot             no      no      no    no      no      no    no    no
+dot in a class          no      no      no    no      no      no    no    no
+escaped star            2*3     2*3     2*3   2*3     2*3     2*3   2*3   2*3
+escaped brackets        [x]     [x]     [x]   [x]     [x]     [x]   [x]   [x]
+escaped braces          a{2}    a{2}    a{2}  a{2}    a{2}    a{2}  a{2}  a{2}
+escaped backslash       a\\b    a\\b    a\\b  a\\b    a\\b    a\\b  a\\b  a\\b
+hyphen outside a class  a-b     a-b     a-b   a-b     a-b     a-b   a-b   a-b
+slash needs no escape   a/b     a/b     a/b   a/b     a/b     a/b   a/b   a/b
+escaped letter: \e      -       \u{1B}  no    \u{1B}  \u{1B}  -     -     \u{1B}
+escaped letter: \q      -       q       q     q       -       -     -     -

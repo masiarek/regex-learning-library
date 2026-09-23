@@ -1,0 +1,6 @@
+construct              python  perl  node  ruby  java  go  rust  fancy
+a++a can never match   no      no    -     no    no    -   aa    no
+a+a can                aa      aa    aa    aa    aa    aa  aa    aa
+possessive then other  aab     aab   -     aab   aab   -   aab   aab
+class then dot         3.14    3.14  -     3.14  3.14  -   3.14  3.14
+*+ and ?+              aabc    aabc  -     aabc  aabc  -   aabc  aabc

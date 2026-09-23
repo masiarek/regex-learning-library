@@ -1,0 +1,10 @@
+construct                 python  perl  node  ruby  java  go  rust  fancy
+start of subject          a       a     a     a     a     a   a     a
+second line, no flag      no      no    no    b     no    no  no    no
+second line, (?m)         b       b     -     b     b     b   b     b
+second line, node m flag  no      no    b     b     no    no  no    no
+\A instead                no      no    no    no    no    no  no    no
+\A in JavaScript          no      no    Ab    no    no    no  no    no
+mid-pattern ^             no      no    no    no    no    no  no    no
+negation inside a class   b       b     b     b     b     b   b     b
+literal inside a class    ^       ^     ^     ^     ^     ^   ^     ^

@@ -1,0 +1,8 @@
+construct                 python  perl   node  ruby   java  go  rust  fancy
+optional bracket, closed  <tag>   <tag>  -     <tag>  -     -   -     <tag>
+optional bracket, bare    tag     tag    -     tag    -     -   -     tag
+optional bracket, open    no      no     -     no     -     -   -     no
+named condition (?(<n>))  -       <tag>  -     <tag>  -     -   -     <tag>
+named condition (?(n))    <tag>   -      -     -      -     -   -     no
+lookahead condition       -       <tag>  -     -      -     -   -     -
+DEFINE block              -       5      -     -      -     -   -     -

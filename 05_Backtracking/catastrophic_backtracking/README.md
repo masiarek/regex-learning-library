@@ -4,6 +4,8 @@
 
 **Level:** 301 · you write patterns that untrusted input reaches
 
+**Keywords on this page:** [`*` `+` `?`](../../10_Keywords/star_plus_question/README.md) · [`{n,m}`](../../10_Keywords/braces/README.md) · [`|`](../../10_Keywords/alternation/README.md) · [`(?>…)`](../../10_Keywords/atomic_group/README.md) · [`*+`](../../10_Keywords/possessive_quantifier/README.md) · [`(*SKIP)(*F)`](../../10_Keywords/backtracking_verbs/README.md) · [`(*UCP)`](../../10_Keywords/start_of_pattern_options/README.md) — **Topics:** [Security](../../11_Topics/security/README.md) · [Performance](../../11_Topics/performance/README.md) · [Testing patterns](../../11_Topics/testing_patterns/README.md)
+
 [What a backreference costs](../../01_Backreferences/what_a_backreference_costs/README.md) is about a feature you have to ask for. This page is the other half: the same explosion, reached by a pattern that uses nothing exotic at all, written by someone who was trying to be careful.
 
 ## The shape to recognise

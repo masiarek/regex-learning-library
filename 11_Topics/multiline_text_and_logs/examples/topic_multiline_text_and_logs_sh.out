@@ -1,0 +1,12 @@
+construct                    python   perl     node  ruby     java     go       rust     fancy
+line anchors, no flag        no       no       no    b        no       no       no       no
+line anchors, (?m)           b        b        -     b        b        b        b        b
+line anchors, node m flag    no       no       b     b        no       no       no       no
+CRLF line, (?m)^b$           no       no       -     no       b        no       no       no
+CRLF line, \r?$              b\r      b\r      -     b\r      b        b\r      b\r      b\r
+dot across lines             a\nb\nc  a\nb\nc  -     -        a\nb\nc  a\nb\nc  a\nb\nc  a\nb\nc
+dot across lines, Ruby (?m)  no       no       -     a\nb\nc  no       no       no       no
+\R for any line break        -        a\r\nb   no    a\r\nb   a\r\nb   -        -        -
+first line only              first    first    no    first    first    first    first    first
+last line only               -        second   no    second   second   second   second   second
+last line, Python's \Z       second   second   no    second   second   -        -        second

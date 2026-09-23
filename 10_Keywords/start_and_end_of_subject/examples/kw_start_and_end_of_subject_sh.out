@@ -1,0 +1,10 @@
+construct                 python  perl  node  ruby  java  go  rust  fancy
+\A start                  a       a     no    a     a     a   a     a
+\A after a newline        no      no    no    no    no    no  no    no
+\A in JavaScript          no      no    Aa    no    no    no  no    no
+\A with the u flag        no      no    -     no    no    no  no    no
+\z end                    -       a     no    a     a     a   a     a
+\z before final newline   -       no    no    no    no    no  no    no
+\Z before final newline   no      a     no    a     a     -   -     a
+\Z before middle newline  no      no    no    no    no    -   -     no
+\Z in JavaScript          no      no    aZ    no    no    -   -     no

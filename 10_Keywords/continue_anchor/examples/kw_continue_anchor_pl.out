@@ -1,0 +1,3 @@
+ID(x) OP(=) NUM(42) OP(+) ID(y7)
+without \G: x = 42 y7
+with \G:    x = 42 ERROR at 7

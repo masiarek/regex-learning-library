@@ -1,0 +1,12 @@
+construct          python  perl    node  ruby    java  go    rust    fancy
+(?i)               A       A       -     A       A     A     A       A
+(?i) mid-pattern   -       aB      -     aB      aB    aB    aB      aB
+(?i) then (?-i)    -       no      -     no      no    no    no      no
+(?s)               a\nb    a\nb    -     -       a\nb  a\nb  a\nb    a\nb
+(?m)               b       b       -     b       b     b     b       b
+(?x) free-spacing  ab      ab      -     ab      ab    -     ab      ab
+(?U) ungreedy      -       -       -     -       aa    a     a       a
+(?a) ASCII         no      no      -     no      -     -     -       -
+(?u)               \u{E9}  \u{E9}  -     \u{E9}  no    -     \u{E9}  \u{E9}
+(?d) UNIX_LINES    -       no      -     no      no    -     -       -
+unknown flag       -       -       -     -       -     -     -       -

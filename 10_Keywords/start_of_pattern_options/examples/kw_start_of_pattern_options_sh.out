@@ -1,0 +1,5 @@
+construct          python  perl  node  ruby  java  go  rust  fancy
+(*UCP)             -       -     -     -     -     -   -     -
+(*UTF)             -       -     -     -     -     -   -     -
+(*CRLF)            -       -     -     -     -     -   -     -
+(*LIMIT_MATCH=10)  -       -     -     -     -     -   -     -

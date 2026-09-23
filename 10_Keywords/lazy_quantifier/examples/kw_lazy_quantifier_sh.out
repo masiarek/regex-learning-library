@@ -1,0 +1,7 @@
+construct            python    perl      node      ruby      java      go        rust      fancy
+greedy               <b>x</b>  <b>x</b>  <b>x</b>  <b>x</b>  <b>x</b>  <b>x</b>  <b>x</b>  <b>x</b>
+lazy                 <b>       <b>       <b>       <b>       <b>       <b>       <b>       <b>
+?? prefers nothing   ""        ""        ""        ""        ""        ""        ""        ""
+{2,3}? stops at two  aa        aa        aa        aa        aa        aa        aa        aa
+lazy at the end      name=     name=     name=     name=     name=     name=     name=     name=
+lazy, anchored       name=x    name=x    name=x    name=x    name=x    name=x    name=x    name=x

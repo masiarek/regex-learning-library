@@ -1,0 +1,7 @@
+input    a.b*c[d]{e}$ f
+python   a\.b\*c\[d\]\{e\}\$\ f
+perl     a\.b\*c\[d\]\{e\}\$\ f
+ruby     a\.b\*c\[d\]\{e\}\$\ f
+java     \Qa.b*c[d]{e}$ f\E
+go       a\.b\*c\[d\]\{e\}\$ f
+rust     a\.b\*c\[d\]\{e\}\$ f

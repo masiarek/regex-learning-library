@@ -1,0 +1,10 @@
+construct               python  perl  node  ruby    java  go    rust    fancy
+exactly two             aa      aa    aa    aa      aa    aa    aa      aa
+two or more             aaaa    aaaa  aaaa  aaaa    aaaa  aaaa  aaaa    aaaa
+between one and two     aa      aa    aa    aa      aa    aa    aa      aa
+{,2} up to two          aa      aa    no    aa      -     no    -       aa
+{2,1} backwards         -       no    -     -       -     -     -       -
+{1001} large count      ok      ok    ok    ok      ok    -     ok      ok
+{2}{3} stacked          -       -     -     aaaaaa  aa    -     aaaaaa  no
+literal brace           a{      a{    a{    a{      -     a{    -       a{
+literal brace, escaped  a{      a{    a{    a{      a{    a{    a{      a{

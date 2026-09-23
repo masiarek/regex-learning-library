@@ -54,6 +54,18 @@ cargo run --locked --quiet --manifest-path ../../../rust-demo/Cargo.toml --bin b
 
 `--locked` is not decoration. These examples print **error messages**, and a silent minor bump that rewords one is exactly the drift this library exists to catch.
 
+## Keyword and topic tables
+
+A page on the [Keywords](10_Keywords/README.md) or [Topics](11_Topics/README.md) shelf gets its table from one program, [`tools/kwprobe/run.py`](tools/kwprobe/run.py), driven by a `.sh` example that holds the rows:
+
+```bash
+python3 ../../../tools/kwprobe/run.py <<'ROWS'
+label            :: pattern     :: subject   [:: replace=TMPL | split | node=FLAGS | skip=a,b]
+ROWS
+```
+
+Eight engines answer every row — Python 3.12 (CI's), Perl, Node, Ruby, Java, Go, `regex` and `fancy-regex` — and the cell is what each matched, `no`, or `-` for refused. The driver's docstring has the grammar and the cell meanings. Two rules for rows: **keep every subject ASCII in the file** (`\u{HEX}` decodes the same way in every probe), and **`skip=` an engine whose answer would depend on a runtime version** that differs between your machine and CI — that is what keeps a key byte-identical on both. Then write the prose against the table, not before it.
+
 ## The ABAP column
 
 Nothing in this repository can run ABAP, and neither can a GitHub runner. So:

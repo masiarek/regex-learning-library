@@ -1,0 +1,9 @@
+construct                 python       perl         node         ruby         java      go       rust       fancy
+plain delimiter           [a,b,c]      [a,b,c]      [a,b,c]      [a,b,c]      [a,b,c]   [a,b,c]  [a,b,c]    [a,b,c]
+captured delimiter        [a,;,b,;,c]  [a,;,b,;,c]  [a,;,b,;,c]  [a,;,b,;,c]  [a,b,c]   [a,b,c]  [a,b,c]    [a,b,c]
+trailing empty piece      [a,b,]       [a,b,]       [a,b,]       [a,b,]       [a,b,]    [a,b,]   [a,b,]     [a,b,]
+leading empty piece       [,a]         [,a]         [,a]         [,a]         [,a]      [,a]     [,a]       [,a]
+run of delimiters         [a,b]        [a,b]        [a,b]        [a,b]        [a,b]     [a,b]    [a,b]      [a,b]
+on whitespace             [a,b,c]      [a,b,c]      [a,b,c]      [a,b,c]      [a,b,c]   [a,b,c]  [a,b,c]    [a,b,c]
+zero-width split          [a,ba,b]     [a,ba,b]     [a,ba,b]     [a,ba,b]     [a,ba,b]  -        -          [a,ba,b]
+split on every character  [,a,b,c,]    [a,b,c,]     [a,b,c]      [a,b,c,]     [a,b,c,]  [a,b,c]  [,a,b,c,]  [,a,b,c,]

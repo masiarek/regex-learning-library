@@ -1,0 +1,6 @@
+construct              python  perl  node  ruby  java  go  rust  fancy
+positive               25      25    25    25    25    -   -     25
+negative, the trap     2       2     2     2     2     -   -     2
+negative, fixed        no      no    no    no    no    -   -     no
+lookahead can capture  aaa     aaa   aaa   aaa   aaa   -   -     aaa
+at the start           ab1     ab1   ab1   ab1   ab1   -   -     ab1

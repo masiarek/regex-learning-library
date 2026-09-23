@@ -1,0 +1,8 @@
+construct               python  perl     node  ruby     java  go  rust  fancy
+(?R) whole pattern      -       (a(b)c)  -     -        -     -   (b)   -
+(?1) group one          -       (a(b)c)  -     -        -     -   -     -
+(?&name)                -       (a(b)c)  -     -        -     -   -     -
+\g<0> Ruby spelling     -       -        (b)   (a(b)c)  -     -   -     -
+\g<name> Ruby spelling  -       -        (b)   (a(b)c)  -     -   -     -
+subroutine vs backref   -       12-34    -     -        -     -   -     -
+backref for comparison  no      no       no    no       no    -   -     no

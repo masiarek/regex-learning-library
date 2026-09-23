@@ -11,6 +11,8 @@ The languages in front are **Rust, Python and ABAP**, with **Perl, JavaScript, R
 | | |
 | --- | --- |
 | [Start here](00_Start_Here/README.md) | The one rule, the four engine lineages, and where to go first. |
+| [Keywords](10_Keywords/README.md) | One page per construct, thirty-three of them, each with a table made by handing the same rows to eight engines. |
+| [Topics](11_Topics/README.md) | One page per job — validating, extracting, splitting, escaping, porting, securing — pulling the keywords and chapters together. |
 | [Backreferences](01_Backreferences/README.md) | `\1` matches *text*, not a pattern. Four lessons: what it is, forward references, the `$1` that is not a backreference at all, and what the feature costs. |
 | [Lookaround](02_Lookaround/README.md) | Zero-width assertions, the two traps everyone hits, and how wide a lookbehind may be in seven engines. |
 | [Backtracking](05_Backtracking/README.md) | The patterns everybody writes that never answer, and the `(?>…)` / `a++` that fix them by changing what they match. |
@@ -43,7 +45,7 @@ python3 tools/check_all.py             # every gate CI runs, in CI's order
 uv run --group docs mkdocs serve       # preview the site
 ```
 
-Ninety-two examples in Python, Perl, JavaScript, Ruby, Java, C, Go, Rust, bash, grep and sed run on every push, on Ubuntu — which is a second machine, not the one they were written on, and so a second opinion about every answer key. The fourteen ABAP examples are source-only and say so; abaplint parses them instead — see [CONTRIBUTING.md](CONTRIBUTING.md).
+139 examples in Python, Perl, JavaScript, Ruby, Java, C, Go, Rust, bash, grep and sed run on every push, on Ubuntu — which is a second machine, not the one they were written on, and so a second opinion about every answer key. The fourteen ABAP examples are source-only and say so; abaplint parses them instead — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Site
 

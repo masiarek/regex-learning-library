@@ -1,0 +1,10 @@
+construct             python  perl            node      ruby            java      go              rust            fancy
+\p{L} letter          -       \u{3B1}b        no        \u{3B1}b        \u{3B1}b  \u{3B1}b        \u{3B1}b        \u{3B1}b
+\p{L} node u flag     -       \u{3B1}b        \u{3B1}b  \u{3B1}b        \u{3B1}b  \u{3B1}b        \u{3B1}b        \u{3B1}b
+\pL no braces         -       \u{3B1}b        no        no              \u{3B1}b  \u{3B1}b        \u{3B1}b        \u{3B1}b
+\p{Lu} uppercase      -       \u{394}         no        \u{394}         \u{394}   \u{394}         \u{394}         \u{394}
+\p{Greek}             -       \u{3B1}\u{3B2}  no        \u{3B1}\u{3B2}  -         \u{3B1}\u{3B2}  \u{3B1}\u{3B2}  \u{3B1}\u{3B2}
+\p{Script=Greek}      -       \u{3B1}         no        -               \u{3B1}   -               \u{3B1}         \u{3B1}
+\p{IsGreek}           -       \u{3B1}         no        -               \u{3B1}   -               \u{3B1}         \u{3B1}
+\P{L} not a letter    -       1               no        1               1         1               1               1
+\p{Nd} decimal digit  -       \u{660}         no        \u{660}         \u{660}   \u{660}         \u{660}         \u{660}

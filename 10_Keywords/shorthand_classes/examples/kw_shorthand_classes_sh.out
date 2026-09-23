@@ -1,0 +1,10 @@
+construct                  python          perl            node    ruby    java    go   rust            fancy
+\d on Arabic-Indic digits  \u{660}\u{661}  \u{660}\u{661}  no      no      no      no   \u{660}\u{661}  \u{660}\u{661}
+\w on Latin-1              \u{E9}t\u{E9}   \u{E9}t\u{E9}   t       t       t       t    \u{E9}t\u{E9}   \u{E9}t\u{E9}
+\w on Greek                \u{3B1}\u{3B2}  \u{3B1}\u{3B2}  no      no      no      no   \u{3B1}\u{3B2}  \u{3B1}\u{3B2}
+\s on no-break space       \u{A0}          \u{A0}          \u{A0}  no      no      no   \u{A0}          \u{A0}
+\h horizontal space        -               a\tb            no      no      a\tb    -    -               no
+\v vertical space          no              a\nb            no      no      a\nb    no   no              no
+\R any newline             -               a\r\nb          no      a\r\nb  a\r\nb  -    -               -
+\N not a newline           -               axb             no      no      -       -    -               -
+\D \W \S negations         a b             a b             a b     a b     a b     a b  a b             a b

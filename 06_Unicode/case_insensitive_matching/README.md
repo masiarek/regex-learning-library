@@ -4,6 +4,8 @@
 
 **Level:** 301 · you use `(?i)` on text other people typed
 
+**Keywords on this page:** [`(?i)`](../../10_Keywords/inline_flags/README.md) · [`[…]`](../../10_Keywords/character_class/README.md) · [`\1`](../../10_Keywords/backreference/README.md) · [`(*UCP)`](../../10_Keywords/start_of_pattern_options/README.md) — **Topics:** [Unicode text](../../11_Topics/unicode_text/README.md) · [Security](../../11_Topics/security/README.md)
+
 Two rows in a product table look identical. One holds a lowercase `k`; the other holds U+212A KELVIN SIGN, the temperature symbol, which most fonts draw as a capital K and which Python's `str.lower()` turns into a plain `k`. Whether your `(?i)` deduplication rule collapses those two rows is not a question about your pattern. It is a question about which engine you handed the pattern to — and the answer differs between Python and Java, between JavaScript with and without one flag, and between Perl and the library Perl's syntax was copied into.
 
 Nobody here is wrong, because `(?i)` has no fixed meaning. Every engine picks a case-folding table, and the tables were picked at different times for different reasons.

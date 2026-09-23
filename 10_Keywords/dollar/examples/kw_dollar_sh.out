@@ -1,0 +1,10 @@
+construct                python  perl  node  ruby  java  go  rust  fancy
+plain end                a       a     a     a     a     a   a     a
+before a final newline   a       a     no    a     a     no  no    no
+before a middle newline  no      no    no    a     no    no  no    no
+(?m) line end            a       a     -     a     a     a   a     a
+node m flag              no      no    a     a     no    no  no    no
+\z instead               -       no    no    no    no    no  no    no
+\z in JavaScript         -       no    az    no    no    no  no    no
+escaped dollar           $5      $5    $5    $5    $5    $5  $5    $5
+mid-pattern $            no      no    no    no    no    no  no    no

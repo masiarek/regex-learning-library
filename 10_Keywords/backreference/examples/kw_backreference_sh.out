@@ -1,0 +1,9 @@
+construct                 python  perl    node    ruby    java  go      rust  fancy
+plain                     aa      aa      aa      aa      aa    -       -     aa
+unset group               no      no      b       no      no    -       -     no
+forward reference         -       aax     aax     aax     aax   -       -     aax
+\g{1} spelling            -       aa      no      no      -     -       -     -
+\g{-1} relative           -       aa      no      no      -     -       -     -
+\k<1> spelling            -       -       no      aa      -     -       -     aa
+\10 with one group        -       a\u{8}  a\u{8}  a\u{8}  no    a\u{8}  -     -
+case-insensitive backref  aA      aA      -       aA      aA    -       -     aA

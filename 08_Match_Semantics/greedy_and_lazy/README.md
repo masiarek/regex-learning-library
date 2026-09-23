@@ -4,6 +4,8 @@
 
 **Level:** 201 · you write patterns already, and someone has told you that `.*?` is the fast one
 
+**Keywords on this page:** [`*` `+` `?`](../../10_Keywords/star_plus_question/README.md) · [`*?`](../../10_Keywords/lazy_quantifier/README.md) · [`*+`](../../10_Keywords/possessive_quantifier/README.md) · [`[…]`](../../10_Keywords/character_class/README.md) · [`.`](../../10_Keywords/dot/README.md) — **Topics:** [Command-line tools](../../11_Topics/command_line_tools/README.md) · [Performance](../../11_Topics/performance/README.md) · [Common patterns and their traps](../../11_Topics/common_patterns_and_their_traps/README.md)
+
 ## The mechanism, once
 
 A quantifier has to decide how many characters to take before the rest of the pattern gets its turn. Greedy is the default everywhere: `.+` takes everything it can reach, then hands control on, and when the rest of the pattern fails it **gives one character back** and tries again, and again, until either the pattern fits or there is nothing left to give. Lazy — spelled with a trailing `?`, as `*?`, `+?`, `??`, `{m,n}?` — starts from the other end: it takes the fewest characters the quantifier allows, hands control on, and when the rest of the pattern fails it **takes one more** and tries again. Both walk the same list of candidate lengths; they walk it in opposite directions, and the first length that lets the whole pattern fit is the answer. That is the entire difference.

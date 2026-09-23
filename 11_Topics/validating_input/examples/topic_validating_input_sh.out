@@ -1,0 +1,11 @@
+construct                   python          perl            node  ruby      java  go        rust            fancy
+^\d+$ on a plain number     42              42              42    42        42    42        42              42
+^\d+$ with a trailing \n    42              42              no    42        42    no        no              no
+^\d+$ with a second line    no              no              no    42        no    no        no              no
+\A\d+\z instead             -               no              no    no        no    no        no              no
+\A\d+\Z, Python's spelling  no              42              no    42        42    -         -               42
+\d+ with no anchors         42              42              42    42        42    42        42              42
+\d+ on Arabic-Indic digits  \u{660}\u{661}  \u{660}\u{661}  no    no        no    no        \u{660}\u{661}  \u{660}\u{661}
+[0-9]+ on the same          no              no              no    no        no    no        no              no
+(?i)[a-z]+ on KELVIN SIGN   \u{212A}        \u{212A}        -     \u{212A}  no    \u{212A}  \u{212A}        \u{212A}
+[a-z]+ on KELVIN, node i    no              no              no    no        no    no        no              no

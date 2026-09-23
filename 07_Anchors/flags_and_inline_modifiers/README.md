@@ -4,6 +4,8 @@
 
 **Level:** 301 · you move patterns between languages, or keep them somewhere a flags argument cannot follow
 
+**Keywords on this page:** [`(?i)`](../../10_Keywords/inline_flags/README.md) · [`(?:…)`](../../10_Keywords/non_capturing_group/README.md) · [`.`](../../10_Keywords/dot/README.md) · [`^`](../../10_Keywords/caret/README.md) · [`$`](../../10_Keywords/dollar/README.md) · [`(?#…)`](../../10_Keywords/comment/README.md) — **Topics:** [Multiline text and logs](../../11_Topics/multiline_text_and_logs/README.md) · [Readable patterns](../../11_Topics/readable_patterns/README.md) · [Portability between engines](../../11_Topics/portability_between_engines/README.md)
+
 A flag is the smallest piece of a regular expression and the one most likely to be written from memory. It has two spellings everywhere: an argument next to the pattern (`re.MULTILINE`, `Pattern.DOTALL`, `/m`) and a modifier inside it (`(?m)`, `(?s)`). The second is the one worth the habit, and the rest of this page is the measurement of why.
 
 ## The letter that costs a day

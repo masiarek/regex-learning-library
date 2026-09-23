@@ -4,6 +4,8 @@
 
 **Level:** 301 · you write validation patterns that other people's names go through
 
+**Keywords on this page:** [`\w` `\d` `\s`](../../10_Keywords/shorthand_classes/README.md) · [`\b`](../../10_Keywords/word_boundary/README.md) · [`[[:alpha:]]`](../../10_Keywords/posix_classes/README.md) · [`(?i)`](../../10_Keywords/inline_flags/README.md) · [`(*UCP)`](../../10_Keywords/start_of_pattern_options/README.md) — **Topics:** [Unicode text](../../11_Topics/unicode_text/README.md) · [Validating input](../../11_Topics/validating_input/README.md)
+
 This is the most expensive Unicode bug there is, because it never raises anything. A pattern written against English test data keeps compiling, keeps matching, and quietly rejects or truncates everyone whose name is not spelled in ASCII.
 
 ## The subject, and the seven characters

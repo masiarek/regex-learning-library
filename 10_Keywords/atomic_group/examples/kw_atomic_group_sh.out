@@ -1,0 +1,5 @@
+construct             python  perl  node  ruby  java  go  rust  fancy
+(?>a+)a cannot match  no      no    -     no    no    -   -     no
+a+a can               aa      aa    aa    aa    aa    aa  aa    aa
+atomic then other     aab     aab   -     aab   aab   -   -     aab
+lookahead emulation   no      no    no    no    no    -   -     no

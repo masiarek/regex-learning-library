@@ -64,6 +64,42 @@ LABEL_OVERRIDES: dict[str, str] = {
     "greedy_and_lazy": "Greedy and lazy",
     "leftmost_first_vs_leftmost_longest": "Leftmost-first vs leftmost-longest",
     "unicode_properties": "Unicode properties: \\p{…}",
+    # The Keywords shelf: a keyword page's H1 is a sentence about the construct,
+    # and its sidebar entry is the construct. Keyed by folder name, so every
+    # keyword folder name has to stay distinct from every lesson folder name.
+    "caret": "^",
+    "dollar": "$",
+    "start_and_end_of_subject": "\\A  \\z  \\Z",
+    "word_boundary": "\\b  \\B",
+    "continue_anchor": "\\G",
+    "dot": ".",
+    "character_class": "[...]",
+    "shorthand_classes": "\\d  \\w  \\s",
+    "posix_classes": "[[:alpha:]]",
+    "unicode_property": "\\p{...}",
+    "grapheme_cluster": "\\X",
+    "star_plus_question": "*  +  ?",
+    "braces": "{n,m}",
+    "lazy_quantifier": "*?  lazy",
+    "possessive_quantifier": "*+  possessive",
+    "capturing_group": "( )  capturing",
+    "non_capturing_group": "(?: )  non-capturing",
+    "named_group": "(?<name> )",
+    "backreference": "\\1  backreference",
+    "replacement_references": "$1  in the replacement",
+    "branch_reset": "(?| )  branch reset",
+    "alternation": "|  alternation",
+    "lookahead": "(?= )  lookahead",
+    "lookbehind": "(?<= )  lookbehind",
+    "atomic_group": "(?> )  atomic",
+    "conditional": "(?(1) )  conditional",
+    "recursion_and_subroutine_calls": "(?R)  recursion",
+    "keep_out": "\\K",
+    "backtracking_verbs": "(*SKIP)(*F)  verbs",
+    "inline_flags": "(?i)  inline flags",
+    "comment": "(?# )  comment",
+    "quote": "\\Q...\\E",
+    "start_of_pattern_options": "(*UCP)  options",
 }
 
 # Reading order per folder path. Children named by on-disk name; anything not
@@ -76,6 +112,8 @@ NAV_ORDER: dict[str, list[str]] = {
     "": [
         "index.md",
         "00_Start_Here",
+        "10_Keywords",
+        "11_Topics",
         "01_Backreferences",
         "02_Lookaround",
         "05_Backtracking",
@@ -134,6 +172,30 @@ NAV_ORDER: dict[str, list[str]] = {
         "README.md",
         "matching_nested_structures",
         "conditionals_and_define",
+    ],
+    # The two reference shelves sit right after Start Here, as in the sibling
+    # libraries: a reader looking a construct up should not have to scroll past
+    # the chapters to find it. Within Keywords the order is the README's --
+    # anchors, characters, quantifiers, groups, lookaround and control, flags.
+    "10_Keywords": [
+        "README.md",
+        "caret", "dollar", "start_and_end_of_subject", "word_boundary", "continue_anchor",
+        "dot", "character_class", "shorthand_classes", "posix_classes", "unicode_property",
+        "grapheme_cluster",
+        "star_plus_question", "braces", "lazy_quantifier", "possessive_quantifier",
+        "capturing_group", "non_capturing_group", "named_group", "backreference",
+        "replacement_references", "branch_reset", "alternation",
+        "lookahead", "lookbehind", "atomic_group", "conditional",
+        "recursion_and_subroutine_calls", "keep_out", "backtracking_verbs",
+        "inline_flags", "comment", "quote", "start_of_pattern_options",
+    ],
+    "11_Topics": [
+        "README.md",
+        "validating_input", "extracting_fields", "search_and_replace", "splitting_text",
+        "escaping_and_literal_text", "multiline_text_and_logs",
+        "common_patterns_and_their_traps", "readable_patterns",
+        "security", "performance", "unicode_text", "testing_patterns",
+        "portability_between_engines", "choosing_an_engine", "command_line_tools",
     ],
 }
 

@@ -4,6 +4,8 @@
 
 **Level:** 301 · you have a pattern that is too slow, or one that quietly stopped matching after somebody made it faster
 
+**Keywords on this page:** [`(?>…)`](../../10_Keywords/atomic_group/README.md) · [`*+`](../../10_Keywords/possessive_quantifier/README.md) · [`(?=…)`](../../10_Keywords/lookahead/README.md) · [`\1`](../../10_Keywords/backreference/README.md) — **Topics:** [Performance](../../11_Topics/performance/README.md)
+
 Almost every page about these two constructs sells them as a performance feature and stops there. The half that gets left out is the half that files bugs: `a+a` matches `aa`, and `a++a` matches nothing at all, in any subject, ever.
 
 ## What the engine actually discards

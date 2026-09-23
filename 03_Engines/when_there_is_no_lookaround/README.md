@@ -4,6 +4,8 @@
 
 **Level:** 201 · you write Rust or Go and just discovered the hole
 
+**Keywords on this page:** [`(?=…)`](../../10_Keywords/lookahead/README.md) · [`(?<=…)`](../../10_Keywords/lookbehind/README.md) · [`(…)`](../../10_Keywords/capturing_group/README.md) · [`|`](../../10_Keywords/alternation/README.md) — **Topics:** [Choosing an engine](../../11_Topics/choosing_an_engine/README.md) · [Extracting fields](../../11_Topics/extracting_fields/README.md)
+
 ## First, the refusal
 
 <!-- output:lookaround_rs_sh -->

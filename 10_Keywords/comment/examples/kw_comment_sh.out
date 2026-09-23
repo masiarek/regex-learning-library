@@ -1,0 +1,4 @@
+construct          python  perl  node  ruby  java  go   rust  fancy
+(?#...)            ab      ab    -     ab    -     -    -     ab
+hash under (?x)    a       a     -     a     a     -    a     a
+hash without (?x)  a#b     a#b   a#b   a#b   a#b   a#b  a#b   a#b

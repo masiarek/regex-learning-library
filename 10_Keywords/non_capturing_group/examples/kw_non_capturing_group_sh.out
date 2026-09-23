@@ -1,0 +1,6 @@
+construct               python  perl   node  ruby  java  go    rust  fancy
+grouping only           abab    abab   abab  abab  abab  abab  abab  abab
+does not shift numbers  $1      b      b     $1    b     b     b     b
+does not shift, \1      b       \u{1}  \\1   b     1     \\1   \\1   \\1
+scoped flag (?i:)       Ab      Ab     n/a   Ab    Ab    Ab    Ab    Ab
+scoped flag off (?-i:)  no      no     n/a   no    no    no    no    no

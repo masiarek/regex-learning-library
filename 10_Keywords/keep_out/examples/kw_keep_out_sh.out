@@ -1,0 +1,4 @@
+construct         python  perl  node  ruby  java  go  rust  fancy
+match after \K    -       bar   no    bar   -     -   -     bar
+replace after \K  -       fooX  no    fooX  -     -   -     fooX
+\K in JavaScript  -       no    aKb   no    -     -   -     no

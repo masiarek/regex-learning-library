@@ -1,0 +1,9 @@
+construct              python          perl            node   ruby   java   go     rust            fancy
+whole word             cat             cat             cat    cat    cat    cat    cat             cat
+not inside a word      no              no              no     no     no     no     no              no
+\B inside a word       cat             cat             cat    cat    cat    cat    cat             cat
+Greek word, \b\w+\b    \u{3B1}\u{3B2}  \u{3B1}\u{3B2}  no     no     no     no     \u{3B1}\u{3B2}  \u{3B1}\u{3B2}
+Latin-1 word           na\u{EF}ve      na\u{EF}ve      na     no     na     na     na\u{EF}ve      na\u{EF}ve
+boundary before digit  2               2               2      2      2      2      2               2
+GNU \< \> spelling     <cat>           <cat>           <cat>  <cat>  <cat>  <cat>  cat             cat
+\b inside a class      \u{8}           \u{8}           \u{8}  \u{8}  -      -      -               \u{8}

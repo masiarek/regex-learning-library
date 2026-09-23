@@ -4,6 +4,8 @@
 
 **Level:** 101 · anyone who has written a pattern with `(` `)` in it
 
+**Keywords on this page:** [`\1`](../../10_Keywords/backreference/README.md) · [`(…)`](../../10_Keywords/capturing_group/README.md) · [`(?<name>…)`](../../10_Keywords/named_group/README.md) · [`$1` in the replacement](../../10_Keywords/replacement_references/README.md) — **Topics:** [Extracting fields](../../11_Topics/extracting_fields/README.md) · [Command-line tools](../../11_Topics/command_line_tools/README.md)
+
 That one sentence is the whole idea, and almost every surprise later in this chapter comes from forgetting the word *text*. `(\w+) \1` does not mean "a word, then another word". It means "a word, then **that same word**, character for character".
 
 ## The smallest useful example

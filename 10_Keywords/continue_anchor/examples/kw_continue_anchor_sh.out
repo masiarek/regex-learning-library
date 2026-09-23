@@ -1,0 +1,3 @@
+construct         python  perl  node  ruby  java  go  rust  fancy
+\G at the start   -       a     no    a     a     -   -     a
+\G in JavaScript  -       no    Ga    no    no    -   -     no

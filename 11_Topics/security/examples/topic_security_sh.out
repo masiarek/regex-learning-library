@@ -1,0 +1,10 @@
+construct                    python          perl            node       ruby           java       go             rust            fancy
+$ lets a newline through     42              42              no         42             42         no             no              no
+Ruby: $ lets a line through  no              no              no         42             no         no             no              no
+\A…\z does not               -               no              no         no             no         no             no              no
+(?i) folds KELVIN to k       \u{212A}elvin   \u{212A}elvin   -          \u{212A}elvin  no         \u{212A}elvin  \u{212A}elvin   \u{212A}elvin
+(?i)[a-z] admits KELVIN      \u{212A}        \u{212A}        -          \u{212A}       no         \u{212A}       \u{212A}        \u{212A}
+[a-z] admits KELVIN, node i  no              no              no         no             no         no             no              no
+\d admits non-ASCII digits   \u{661}\u{662}  \u{661}\u{662}  no         no             no         no             \u{661}\u{662}  \u{661}\u{662}
+unescaped user text          userXname       userXname       userXname  userXname      userXname  userXname      userXname       userXname
+escaped user text            no              no              no         no             no         no             no              no

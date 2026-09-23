@@ -1,0 +1,11 @@
+construct                    python     perl       node       ruby       java       go         rust       fancy
+\w on an accented letter     \u{E9}     \u{E9}     no         no         no         no         \u{E9}     \u{E9}
+\d on an Arabic-Indic digit  \u{663}    \u{663}    no         no         no         no         \u{663}    \u{663}
+\p{L} on Greek               -          \u{3B1}    no         \u{3B1}    \u{3B1}    \u{3B1}    \u{3B1}    \u{3B1}
+\p{L} on Greek, node u       -          \u{3B1}    \u{3B1}    \u{3B1}    \u{3B1}    \u{3B1}    \u{3B1}    \u{3B1}
+. on an emoji                \u{1F600}  \u{1F600}  no         \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}
+. on an emoji, node u        \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}  \u{1F600}
+. on e + combining accent    no         no         no         no         no         no         no         no
+\X on e + combining accent   -          e\u{301}   no         e\u{301}   e\u{301}   -          -          -
+(?i) on LONG S vs s          \u{17F}    \u{17F}    -          \u{17F}    no         \u{17F}    \u{17F}    \u{17F}
+(?i) on sharp s vs ss        no         \u{DF}     -          \u{DF}     no         no         no         no

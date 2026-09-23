@@ -4,6 +4,8 @@
 
 **Level:** 301 · you are choosing an engine, or you have a request timing out
 
+**Keywords on this page:** [`\1`](../../10_Keywords/backreference/README.md) · [`(?>…)`](../../10_Keywords/atomic_group/README.md) · [`*+`](../../10_Keywords/possessive_quantifier/README.md) · [`*` `+` `?`](../../10_Keywords/star_plus_question/README.md) — **Topics:** [Performance](../../11_Topics/performance/README.md) · [Choosing an engine](../../11_Topics/choosing_an_engine/README.md)
+
 This is the lesson behind every "why doesn't Go/Rust support backreferences?" question. The answer is not that nobody implemented it.
 
 ## The theory, in three sentences

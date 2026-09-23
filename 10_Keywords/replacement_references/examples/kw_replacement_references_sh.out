@@ -1,0 +1,15 @@
+construct          python    perl        node       ruby       java     go         rust       fancy
+$1                 $2$1      ba          ba         $2$1       ba       ba         ba         ba
+\1                 ba        \u{2}\u{1}  \\2\\1     ba         21       \\2\\1     \\2\\1     \\2\\1
+${1}               ${2}${1}  ba          ${2}${1}   ${2}${1}   err      ba         ba         ba
+$<name>            -         n/a         [a]        [$<w>]     err      [$<w>]     [$<w>]     [$<w>]
+${name}            -         n/a         [${w}]     [${w}]     [a]      [a]        [a]        [a]
+\k<name>           -         [k<w>]      [\\k<w>]   [a]        [k<w>]   [\\k<w>]   [\\k<w>]   [\\k<w>]
+\g<name>           -         [g<w>]      [\\g<w>]   [\\g<w>]   [g<w>]   [\\g<w>]   [\\g<w>]   [\\g<w>]
+$+{name} (Perl)    -         [a]         [$+{w}]    [$+{w}]    err      [$+{w}]    [$+{w}]    [$+{w}]
+whole match $&     x[$&]     x[a]        x[a]       x[$&]      err      x[$&]      x[$&]      x[$&]
+whole match $0     x[$0]     n/a         x[$0]      x[$0]      x[a]     x[a]       x[a]       x[a]
+whole match \0     x[\u{0}]  x[\u{0}]    x[\\0]     x[a]       x[0]     x[\\0]     x[\\0]     x[\\0]
+whole match \g<0>  x[a]      x[g<0>]     x[\\g<0>]  x[\\g<0>]  x[g<0>]  x[\\g<0>]  x[\\g<0>]  x[\\g<0>]
+literal dollar $$  $$        n/a         $          $$         err      $          $          $
+literal dollar \$  \\$       $           \\$        \\$        $        \\$        \\$        \\$

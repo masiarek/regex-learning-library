@@ -1,0 +1,10 @@
+construct                 python  perl   node   ruby   java  go    rust  fancy
+range                     bca     bca    bca    bca    bca   bca   bca   bca
+negated                   x       x      x      x      x     x     x     x
+] first is literal        ]       ]      no     ]      ]     ]     ]     ]
+- last is literal         -       -      -      -      -     -     -     -
+escape inside             3.14    3.14   3.14   3.14   3.14  3.14  3.14  3.14
+backslash-b is backspace  \u{8}   \u{8}  \u{8}  \u{8}  -     -     -     \u{8}
+intersection &&           no      no     no     b      b     no    b     b
+nested class              no      no     no     b      b     no    b     b
+empty class               -       -      no     -      -     -     -     -

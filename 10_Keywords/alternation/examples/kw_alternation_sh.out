@@ -1,0 +1,8 @@
+construct               python  perl  node  ruby  java  go    rust  fancy
+first alternative wins  a       a     a     a     a     a     a     a
+longer first            ab      ab    ab    ab    ab    ab    ab    ab
+integer before decimal  3       3     3     3     3     3     3     3
+decimal before integer  3.14    3.14  3.14  3.14  3.14  3.14  3.14  3.14
+empty alternative       ""      ""    ""    ""    ""    ""    ""    ""
+lowest precedence       b       b     b     b     b     b     b     b
+grouped                 b       b     b     b     b     b     b     b

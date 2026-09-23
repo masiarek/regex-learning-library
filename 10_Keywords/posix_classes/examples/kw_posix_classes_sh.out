@@ -1,0 +1,7 @@
+construct              python  perl      node  ruby      java  go  rust      fancy
+[[:digit:]]            no      12        no    12        no    12  12        12
+[[:alpha:]] on Greek   no      \u{3B1}b  no    \u{3B1}b  no    b   b         b
+[[:word:]] on Latin-1  no      \u{E9}a   no    \u{E9}a   no    a   a         a
+[[:^digit:]] negation  no      ab        no    ab        no    ab  ab        ab
+\p{Alpha} on Greek     -       \u{3B1}b  no    \u{3B1}b  b     -   \u{3B1}b  \u{3B1}b
+outside brackets       :       :         :     :         :     :   :         :

@@ -1,0 +1,11 @@
+construct                    python           perl             node             ruby             java             go               rust             fancy
+email: \S+@\S+ takes two @   a@b@c            a@b@c            a@b@c            a@b@c            a@b@c            a@b@c            a@b@c            a@b@c
+email: one @ enforced        no               no               no               no               no               no               no               no
+IPv4: \d{1,3} allows 999     999.999.999.999  999.999.999.999  999.999.999.999  999.999.999.999  999.999.999.999  999.999.999.999  999.999.999.999  999.999.999.999
+date: shape is not validity  2026-13-45       2026-13-45       2026-13-45       2026-13-45       2026-13-45       2026-13-45       2026-13-45       2026-13-45
+decimal: \d+\.\d+ on 1.2.3   1.2              1.2              1.2              1.2              1.2              1.2              1.2              1.2
+decimal: \d+(\.\d+)? first   1.2              1.2              1.2              1.2              1.2              1.2              1.2              1.2
+quoted: "(.*)" is greedy     "a" and "b"      "a" and "b"      "a" and "b"      "a" and "b"      "a" and "b"      "a" and "b"      "a" and "b"      "a" and "b"
+quoted: "([^"]*)" is not     "a"              "a"              "a"              "a"              "a"              "a"              "a"              "a"
+number: -?\d+ on -           no               no               no               no               no               no               no               no
+number: .5 without a zero    no               no               no               no               no               no               no               no

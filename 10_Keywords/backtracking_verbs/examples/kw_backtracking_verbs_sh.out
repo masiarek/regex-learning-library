@@ -1,0 +1,8 @@
+construct                python  perl     node  ruby  java  go   rust  fancy
+skip quoted, then comma  -       "a,b"Xc  -     -     -     -    -     -
+same without the verbs   X,c     X,c      X,c   X,c   X,c   X,c  X,c   X,c
+(*COMMIT) forbids retry  -       no       -     -     -     -    -     -
+same without (*COMMIT)   ac      ac       ac    ac    ac    ac   ac    ac
+(*PRUNE) forbids retry   -       no       -     -     -     -    -     -
+same without (*PRUNE)    aab     aab      aab   aab   aab   aab  aab   aab
+(*ACCEPT) ends early     -       a        -     -     -     -    -     -

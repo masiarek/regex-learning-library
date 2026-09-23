@@ -1,0 +1,8 @@
+construct             python   perl     node  ruby     java     go       rust     fancy
+free-spacing (?x)     2026-09  2026-09  -     2026-09  2026-09  -        2026-09  2026-09
+comment under (?x)    2026     2026     -     2026     2026     -        2026     2026
+(?#…) comment         42       42       -     42       -        -        -        42
+named group (?<y>…)   -        2026     2026  2026     2026     2026     2026     2026
+named group (?P<y>…)  2026     2026     -     -        -        2026     2026     2026
+scoped flag (?i:…)    JANuary  JANuary  n/a   JANuary  JANuary  JANuary  JANuary  JANuary
+DEFINE and a call     -        09:30    -     -        -        -        -        -

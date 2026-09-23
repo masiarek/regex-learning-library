@@ -1,0 +1,8 @@
+construct             python  perl  node  ruby  java  go  rust  fancy
+(?<w>...)             -       a     a     a     a     a   a     a
+(?P<w>...)            a       a     -     -     -     a   a     a
+(?'w'...)             -       a     -     a     -     -   -     a
+\k<w> backreference   -       aa    aa    aa    aa    -   -     aa
+(?P=w) backreference  aa      aa    -     -     -     -   -     aa
+\g{w} backreference   -       aa    no    no    -     -   -     -
+same name twice       -       b     n/a   b     -     b   -     b

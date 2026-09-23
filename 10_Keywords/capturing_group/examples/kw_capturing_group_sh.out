@@ -1,0 +1,8 @@
+construct                 python  perl        node    ruby  java  go      rust    fancy
+group repeated            abab    abab        abab    abab  abab  abab    abab    abab
+last iteration, $1        [$1]    [b]         [b]     [$1]  [b]   [b]     [b]     [b]
+last iteration, \1        [b]     [\u{1}]     [\\1]   [b]   [1]   [\\1]   [\\1]   [\\1]
+numbered by open bracket  $3$2    ba          ba      $3$2  ba    ba      ba      ba
+numbered, \3\2            ba      \u{3}\u{2}  \\3\\2  ba    32    \\3\\2  \\3\\2  \\3\\2
+unset group in replace    [$1]    []          []      [$1]  []    []      []      []
+unset group, \1           []      [\u{1}]     [\\1]   []    [1]   [\\1]   [\\1]   [\\1]

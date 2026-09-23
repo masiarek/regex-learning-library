@@ -1,0 +1,5 @@
+construct                 python  perl   node   ruby   java  go   rust  fancy
+\Q...\E quoted            -       no     no     no     a.b   a.b  -     -
+\Q...\E does not match x  -       no     no     no     no    no   -     -
+\Q in JavaScript          -       Qa.bE  Qa.bE  Qa.bE  a.b   a.b  -     -
+\Q without \E             -       no     no     no     a.b   a.b  -     -

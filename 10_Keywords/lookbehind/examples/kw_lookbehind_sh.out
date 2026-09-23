@@ -1,0 +1,6 @@
+construct       python  perl  node  ruby  java  go  rust  fancy
+fixed width     25      25    25    25    25    -   -     25
+negative        30      30    30    30    30    -   -     30
+two widths      -       d     d     d     d     -   -     d
+bounded repeat  -       b     b     -     b     -   -     -
+unbounded       -       -     b     -     b     -   -     -

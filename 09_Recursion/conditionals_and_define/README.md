@@ -4,6 +4,8 @@
 
 **Level:** 301 · you write patterns in more than one engine and are deciding whether this one is worth its reading cost
 
+**Keywords on this page:** [`(?(1)…)`](../../10_Keywords/conditional/README.md) · [`(?<name>…)`](../../10_Keywords/named_group/README.md) · [`(?R)`](../../10_Keywords/recursion_and_subroutine_calls/README.md) · [`(?=…)`](../../10_Keywords/lookahead/README.md) · [`(?#…)`](../../10_Keywords/comment/README.md) — **Topics:** [Readable patterns](../../11_Topics/readable_patterns/README.md)
+
 A conditional is the only construct in a regular expression that is an `if`. Everything else — alternation, quantifiers, lookaround — decides what to *try*; a conditional decides based on what already *happened*.
 
 ## The shortest honest use
