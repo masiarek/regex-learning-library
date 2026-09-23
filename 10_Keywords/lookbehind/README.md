@@ -8,7 +8,7 @@
 
 Lookbehind is harder to implement than lookahead, because the engine has to know how far back to look. Each engine drew its own line:
 
-| Engine | `(?<=a)` fixed | `(?<=a\|bc)` two widths | `(?<=a{1,3})` bounded | `(?<=a+)` unbounded |
+| Engine | `(?<=a)` fixed | <code>(?&lt;=a&#124;bc)</code> two widths | `(?<=a{1,3})` bounded | `(?<=a+)` unbounded |
 | --- | --- | --- | --- | --- |
 | Python `re` | yes | **no** | no | no |
 | Ruby | yes | yes | **no** | no |

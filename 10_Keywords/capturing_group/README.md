@@ -11,8 +11,8 @@ Three rules that hold in all eight engines:
 | Rule | Example | Consequence |
 | --- | --- | --- |
 | Numbered by opening bracket | `((a)(b))` → 1 = `ab`, 2 = `a`, 3 = `b` | the outer group is 1, not 3 |
-| A quantified group keeps its last iteration | `(a\|b)+` on `ab` → group 1 = `b` | to get all iterations, loop in the host language |
-| A group that did not participate is unset | `(a)\|(b)` on `b` → group 1 unset | unset is not "empty" everywhere; see [backreference](../backreference/README.md) |
+| A quantified group keeps its last iteration | <code>(a&#124;b)+</code> on `ab` → group 1 = `b` | to get all iterations, loop in the host language |
+| A group that did not participate is unset | <code>(a)&#124;(b)</code> on `b` → group 1 unset | unset is not "empty" everywhere; see [backreference](../backreference/README.md) |
 
 What differs is how you *refer* to a group — `$1` against `\1` — and that is the [replacement references](../replacement_references/README.md) page. The rows below use both spellings so the group semantics can be read in every column.
 

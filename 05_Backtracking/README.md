@@ -4,7 +4,7 @@ Every engine in the Perl family answers a hard question by *searching*: try some
 
 | Lesson | The question |
 | --- | --- |
-| [Catastrophic backtracking, with no backreference anywhere](catastrophic_backtracking/README.md) | `(a+)+`, `(a\|a)*`, `^(\w+\s?)*$` and almost every hand-written email validator. Which engines never answer, which answer until the shape changes slightly, and why the subject that triggers it is one that *fails* to match. |
+| [Catastrophic backtracking, with no backreference anywhere](catastrophic_backtracking/README.md) | `(a+)+`, <code>(a&#124;a)*</code>, `^(\w+\s?)*$` and almost every hand-written email validator. Which engines never answer, which answer until the shape changes slightly, and why the subject that triggers it is one that *fails* to match. |
 | [Atomic groups and possessive quantifiers](atomic_groups_and_possessive_quantifiers/README.md) | `(?>a+)` and `a++`: one instruction in two spellings. What they fix, and the more important half — that they change **what a pattern matches**, not only how long it takes to fail. |
 
 **The two sentences the chapter turns on.** The first: a nested quantifier over something that can match the same text more than one way gives a backtracker exponentially many things to try, and hostile input picks the worst one. The second: "does not explode" is not the same claim as "is bounded" — Perl 5.42 and Java 25 answer every backreference-free shape measured here, and their work still grows quadratically, so a megabyte finds the cliff a hundred characters did not.

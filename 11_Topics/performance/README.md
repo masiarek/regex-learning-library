@@ -27,7 +27,7 @@ Once a pattern cannot explode, it can still do more work than it needs to, and t
 | anchor: `^…` or `\A…` | an unanchored pattern that must start at 0 | without the anchor the engine tries every offset |
 | a literal prefix first | `\w+@…` | engines search for literal prefixes with fast string search before running the automaton |
 | `(?:…)` | `(…)` | a capture costs bookkeeping on every backtrack; only capture what code reads |
-| longest alternative first | `\d+\|\d+\.\d+` | in a leftmost-first engine the order decides both the answer and how many attempts are made — [alternation](../../10_Keywords/alternation/README.md) |
+| longest alternative first | <code>\d+&#124;\d+\.\d+</code> | in a leftmost-first engine the order decides both the answer and how many attempts are made — [alternation](../../10_Keywords/alternation/README.md) |
 | a possessive or atomic group | a greedy one that can never usefully give back | but only where nothing after can overlap — [possessive](../../10_Keywords/possessive_quantifier/README.md) |
 | a specific class | `.` | `.` has to be told at every position that this is not a newline |
 

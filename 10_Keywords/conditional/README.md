@@ -8,7 +8,7 @@
 
 | Condition | Meaning | Perl / PCRE2 | Python | Ruby | `fancy-regex` |
 | --- | --- | --- | --- | --- | --- |
-| `(?(1)…\|…)` | did group 1 match | yes | yes | yes | yes |
+| <code>(?(1)…&#124;…)</code> | did group 1 match | yes | yes | yes | yes |
 | `(?(<n>)…)`, `(?('n')…)` | did the named group match | yes | no | yes | yes |
 | `(?(n)…)` | the bare name | PCRE2 yes, **Perl no** | yes | no | **compiles, always false** |
 | `(?(?=…)…)` | does a lookahead succeed here | yes | no | no | no |

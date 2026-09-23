@@ -6,7 +6,7 @@
 
 ## The characters
 
-| Needs escaping outside a class | `\` `^` `$` `.` `\|` `?` `*` `+` `(` `)` `[` `]` `{` `}` |
+| Needs escaping outside a class | `\` `^` `$` `.` <code>&#124;</code> `?` `*` `+` `(` `)` `[` `]` `{` `}` |
 | --- | --- |
 | Needs escaping inside a class | `\` `]` and, by position, `^` `-` (see [character class](../../10_Keywords/character_class/README.md)) |
 | Never needs escaping | `/` — a delimiter in Perl, JavaScript and Ruby *literals*, not a metacharacter; `-` outside a class; `,` `:` `;` `=` `!` `<` `>` `@` `#` (except under `(?x)`) |

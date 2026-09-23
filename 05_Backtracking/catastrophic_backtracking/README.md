@@ -15,8 +15,8 @@
 | Pattern | The ambiguity |
 | --- | --- |
 | `(a+)+` | 120 `a`s can be split between the inner `+` and the outer `+` in 2<sup>119</sup> ways. |
-| `(a\|a)*` | Every iteration has two branches that consume the identical character. |
-| `(\s*\|\t)+` | A tab matches both branches, and `\s*` can also match nothing. |
+| <code>(a&#124;a)*</code> | Every iteration has two branches that consume the identical character. |
+| <code>(\s*&#124;\t)+</code> | A tab matches both branches, and `\s*` can also match nothing. |
 | `^(\w+\s?)*$` | `\s?` is optional, so a word of *n* characters is `n` different sequences of iterations. |
 | `([a-z]{2,4})+` | A run of letters can be cut into groups of 2, 3 or 4 in a great many ways. |
 

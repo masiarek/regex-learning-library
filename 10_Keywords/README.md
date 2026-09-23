@@ -49,8 +49,8 @@ Two consequences worth knowing before reading a table. **A `-` is good news** �
 | `(?<n>…)` | [Three ways to name a group, four to refer to it](named_group/README.md) | No definition spelling and no reference spelling that all eight accept |
 | `\1` | [Match the text group 1 matched](backreference/README.md) | Unset groups, forward references and `\10` — five answers to one escape |
 | `$1`, `\1`, `${n}` | [The replacement string is a second language](replacement_references/README.md) | Fourteen rows, no universal spelling, and two engines that insert a NUL |
-| `(?\|…)` | [Alternatives that share group numbers](branch_reset/README.md) | Perl and PCRE2 only |
-| `\|` | [This or that, in this order](alternation/README.md) | First alternative that works wins, in all eight — order is meaning |
+| <code>(?&#124;…)</code> | [Alternatives that share group numbers](branch_reset/README.md) | Perl and PCRE2 only |
+| <code>&#124;</code> | [This or that, in this order](alternation/README.md) | First alternative that works wins, in all eight — order is meaning |
 
 ## Lookaround and control
 
@@ -59,7 +59,7 @@ Two consequences worth knowing before reading a table. **A `-` is good news** �
 | `(?=…)`, `(?!…)` | [Assert what follows](lookahead/README.md) | Negative lookahead after a quantifier matches one character too early |
 | `(?<=…)`, `(?<!…)` | [Assert what precedes, and how wide](lookbehind/README.md) | Four width rules across six engines |
 | `(?>…)` | [Once matched, never given back](atomic_group/README.md) | Changes the match, not only the speed; `(?=(…))\1` rebuilds it in JavaScript |
-| `(?(1)…\|…)` | [A branch that depends on the match so far](conditional/README.md) | Python has it; `fancy-regex` compiles the bare-name form and inverts it |
+| <code>(?(1)…&#124;…)</code> | [A branch that depends on the match so far](conditional/README.md) | Python has it; `fancy-regex` compiles the bare-name form and inverts it |
 | `(?R)`, `\g<0>` | [Call the pattern again](recursion_and_subroutine_calls/README.md) | Two dialects with no overlap, and two engines that accept one while meaning something else |
 | `\K` | [Keep everything before this out of the match](keep_out/README.md) | The unlimited-width lookbehind, in Perl, PCRE2 and Ruby |
 | `(*SKIP)(*F)` | [Steering the backtracker by hand](backtracking_verbs/README.md) | Perl and PCRE2 only; the idiom for "commas not inside quotes" |

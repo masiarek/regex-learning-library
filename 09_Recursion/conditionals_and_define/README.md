@@ -53,7 +53,7 @@ Then read the refusals, because **Python's conditional is one spelling, not four
 | --- | --- |
 | `(?(1)>)` | same — the only spelling both agree on |
 | `(?(<open>)>)` | **error.** Python has no `(?<name>…)` groups at all; the group is `(?P<open>…)` and the condition is the bare `(?(open)…)` |
-| `(?(?=<)yes\|no)` | **error.** Python has no lookaround condition |
+| <code>(?(?=&lt;)yes&#124;no)</code> | **error.** Python has no lookaround condition |
 | `(?(DEFINE)…)` | **error** — it reads `DEFINE` as a group name and cannot find it |
 
 So a conditional is the rare construct where a pattern moves *from* Python *to* PCRE unchanged and back again only if it was written by number. The named form does not survive the trip in either direction.

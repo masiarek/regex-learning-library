@@ -245,7 +245,7 @@ Two conclusions follow. **Do not port capture-group indexes across a leftmost-lo
 
 ## The measured summary
 
-| Engine | Rule for the whole match | `a\|ab` on `ab` | `[0-9]+\|[0-9]+\.[0-9]+` on `v 3.14 w` |
+| Engine | Rule for the whole match | <code>a&#124;ab</code> on `ab` | <code>[0-9]+&#124;[0-9]+\.[0-9]+</code> on `v 3.14 w` |
 | --- | --- | --- | --- |
 | Perl 5.42 | leftmost-first | `a` | `3` |
 | Python 3.14 `re` | leftmost-first | `a` | `3` |

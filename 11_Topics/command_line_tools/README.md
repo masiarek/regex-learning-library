@@ -6,9 +6,9 @@
 
 ## Three flavours in three flags
 
-| Flag | Flavour | `(` `+` `?` `{` `\|` mean | Has |
+| Flag | Flavour | `(` `+` `?` `{` <code>&#124;</code> mean | Has |
 | --- | --- | --- | --- |
-| `grep`, `sed` (default) | BRE — basic | literals; the operators are `\(` `\+` `\?` `\{` `\|` | `\1` backreferences (required by POSIX in BRE) |
+| `grep`, `sed` (default) | BRE — basic | literals; the operators are `\(` `\+` `\?` `\{` <code>&#124;</code> | `\1` backreferences (required by POSIX in BRE) |
 | `grep -E`, `sed -E`, `awk`, `egrep` | ERE — extended | operators, as in every language | backreferences only as a common extension |
 | `grep -P`, `pcre2grep` | PCRE2 | as in Perl | everything on the [Keywords](../../10_Keywords/README.md) shelf — lookaround, `\K`, `\d`, lazy quantifiers |
 
